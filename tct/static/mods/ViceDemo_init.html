@@ -1,0 +1,711 @@
+campaignTrail_temp.election_json = [
+    {
+        "model": "campaign_trail.election",
+        "pk": 20,
+        "fields": {
+            "year": 2016,
+            "display_year": "2008Vice",
+            "summary": "As much as pacemaker-laden Richard Bruce Cheney would prefer you not say so, his time is ticking. His legacy? Tarnished by an incompetent Texas buffoon who did perhaps 20% of this Administration's policies and efforts. He understands that, equipped with the lowest approval rating of a Veep in perhaps all of American history, he will be relegated to either the butt of every political joke for a century, or he will be feared as a great tyrant in his own right, much above the warmth and gentleness of his predecessor. After a frankly ridiculous and anemic primary, his position as POTUS is only impeded by the will of the Common Man himself.<br>Thus, the archetypal frontier man finds himself in the last duel of his life, faced with insurmountable odds, the baddies right on his tail.<br><br>This is 𝖛𝖎𝖈𝖊.",
+            "image_url": "https://i.ibb.co/jks5x9q/image-url.png",
+            "winning_electoral_vote_number": 270,
+            "advisor_url": "https://i.ibb.co/2twRSNb/advisort.png",
+            "recommended_reading": "<ul>\n<li><a href=https://www.chicagotribune.com/opinion/editorials/ct-edit-chicago-tribune-biden-endorsement-20200925-lnyxsb5qvrftnjjmj3rnzj33jy-story.html>Our Case For Joe Biden</a></li>\n<li><a href=https://nationalinterest.org/feature/case-trump-166808>The Case For Trump</a></li>\n<li><a href=https://www.npr.org/2020/11/18/935730100/how-biden-won-ramping-up-the-base-and-expanding-margins-in-the-suburbs>How Biden Won: Ramping Up The Base And Expanding Margins In The Suburbs</a></li>\n<li><a href=https://www.prospectmagazine.co.uk/politics/donald-trump-joe-biden-us-election-almost-win-votes-concede>Why Did Trump Almost Win?</a></li>\n<li><a href=https://www.hoover.org/research/no-evidence-voter-fraud-guide-statistical-claims-about-2020-election>No Evidence For Voter Fraud: A Guide To Statistical Claims About The 2020 Election</a></li>\n</ul>",
+            "has_visits": 1,
+            "no_electoral_majority_image": "../static/images/2012-no-majority.jpg"
+        }
+    }
+]
+
+campaignTrail_temp.temp_election_list = [
+    {
+        "id": 20,
+        "year": 2016,
+        "is_premium": 0,
+        "display_year": "2008Vice"
+    }
+]
+
+campaignTrail_temp.credits = "Richard Bruce Cheney"
+
+campaignTrail_temp.global_parameter_json = [
+    {
+        "model": "campaign_trail.global_parameter",
+        "pk": 1,
+        "fields": {
+            "vote_variable": 1.125,
+            "max_swing": 0.12,
+            "start_point": 0.94,
+            "candidate_issue_weight": 10,
+            "running_mate_issue_weight": 3,
+            "issue_stance_1_max": -0.71,
+            "issue_stance_2_max": -0.3,
+            "issue_stance_3_max": -0.125,
+            "issue_stance_4_max": 0.125,
+            "issue_stance_5_max": 0.3,
+            "issue_stance_6_max": 0.71,
+            "global_variance": 0.01,
+            "state_variance": 0.005,
+            "question_count": 30,
+            "default_map_color_hex": "#C9C9C9",
+            "no_state_map_color_hex": "#999999"
+        }
+    }
+]
+
+campaignTrail_temp.candidate_json = [
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 12240,
+        "fields": {
+            "first_name": "Dick",
+            "last_name": "Cheney",
+            "election": 20,
+            "party": "Republican",
+            "state": "Wyoming",
+            "priority": 1,
+            "description": "<p>An obese, angry and hateful cowboy may be the most American man alive. His blood was cast in the great crucible of the Rockies, a true specimen of the pioneer that massacred hundreds to homestead in the Great Wilderness, granted by God.<br>Despite belonging to the stock which should've granted him the title of American Emperor in a God-fearing country, Cheney is exhausted, frail, and tired of wrangling people around to do his bidding. \"Puppetmaster\" can only be an enjoyable job for so long.<br>One thing still fuels this enormous man, one thing keeps his heart from failing and one thing only has kept him in power:<h1>𝕳𝖆𝖙𝖊.\n</h1></p>",
+            "color_hex": "#610000",
+            "secondary_color_hex": null,
+            "is_active": 1,
+            "image_url": "https://i.ibb.co/ss8DC7W/cand.png",
+            "electoral_victory_message": "This guy wins!",
+            "electoral_loss_message": "This guy loses!",
+            "no_electoral_majority_message": "We all win?",
+            "description_as_running_mate": null,
+            "candidate_score": 1,
+            "running_mate": false
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 12354,
+        "fields": {
+            "first_name": "Le Parti Democratique",
+            "last_name": "Democrat Party",
+            "election": 20,
+            "party": "Democrat",
+            "state": "New York",
+            "priority": 1,
+            "description": "",
+            "color_hex": "#5985ff",
+            "secondary_color_hex": null,
+            "is_active": 0,
+            "image_url": "https://i.ibb.co/ss8DC7W/cand.png",
+            "electoral_victory_message": "This guy wins!",
+            "electoral_loss_message": "This guy loses!",
+            "no_electoral_majority_message": "We all win?",
+            "description_as_running_mate": null,
+            "candidate_score": 1,
+            "running_mate": false
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 12411,
+        "fields": {
+            "first_name": "Le",
+            "last_name": "Veep",
+            "election": 20,
+            "party": "Democrat",
+            "state": "Massachussetts",
+            "priority": 1,
+            "description": "<p>Put description here</p>",
+            "color_hex": "#ffffff",
+            "secondary_color_hex": null,
+            "is_active": 0,
+            "image_url": "https://i.ibb.co/fdj6dMt/candd.png",
+            "electoral_victory_message": "This guy wins!",
+            "electoral_loss_message": "This guy loses!",
+            "no_electoral_majority_message": "We all win?",
+            "description_as_running_mate": "",
+            "candidate_score": 1,
+            "running_mate": true
+        }
+    },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 12297,
+        "fields": {
+            "first_name": "Dick",
+            "last_name": "Cheney's Heart",
+            "election": 20,
+            "party": "Republican",
+            "state": "Wyoming",
+            "priority": 1,
+            "description": "<p>Put description here</p>",
+            "color_hex": "#ffffff",
+            "secondary_color_hex": null,
+            "is_active": 0,
+            "image_url": "https://i.ibb.co/fdj6dMt/candd.png",
+            "electoral_victory_message": "This guy wins!",
+            "electoral_loss_message": "This guy loses!",
+            "no_electoral_majority_message": "We all win?",
+            "description_as_running_mate": "<p>You don't have much time. You know your heart's going to give in at some point. You know something has to be done.<br>You comfort yourself knowing that you've recently entered the queue for a heart transplant. It will take years to get one.<br>You don't really care who was the donor,  what they died of, where they were from. None of it really matters.<br><br>What matters is that you must live.<br><h1>𝖄𝖔𝖚 𝖍𝖆𝖛𝖊 𝖓𝖔 𝖔𝖙𝖍𝖊𝖗 𝖈𝖍𝖔𝖎𝖈𝖊.</h1></p>",
+            "candidate_score": 1,
+            "running_mate": true
+        }
+    }
+]
+
+campaignTrail_temp.running_mate_json = [
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 109261,
+        "fields": {
+            "candidate": 12240,
+            "running_mate": 12297
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 109262,
+        "fields": {
+            "candidate": 12354,
+            "running_mate": 12411
+        }
+    }
+]
+
+campaignTrail_temp.opponents_default_json = [
+    {
+        "election": 20,
+        "candidates": [
+            12240,
+            12354
+        ]
+    }
+]
+
+campaignTrail_temp.opponents_weighted_json = [
+    {
+        "election": 20,
+        "candidates": [
+            12240,
+            12354
+        ]
+    }
+]
+
+jet_data = {
+    "headerColor": "#000000",
+    "windowColor": "#000000",
+    "containerColor": "#000000",
+    "innerWindowColor": "#8c8c8c",
+    "bannerImageUrl": "https://i.ibb.co/7kNPSZJ/wg9951.gif",
+    "backgroundImageUrl": "https://i.ibb.co/qkK3C6C/6o15pu.gif",
+    "endingTextColor": "#000000",
+    "customQuote": "",
+    "gameTitle": "𝖛𝖎𝖈𝖊."
+}
+
+//#startcode
+
+
+corrr = '\n              <h2>𝖛𝖎𝖈𝖊.</h2>\n            ';
+
+
+nct_stuff.themes[nct_stuff.selectedTheme].coloring_title = "#000000";
+
+nct_stuff.themes[nct_stuff.selectedTheme].coloring_window = "#636363";
+
+document.getElementsByClassName("game_header")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_title;
+
+$("#game_window")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_window;
+
+$(".container")[0].style.backgroundColor = "#000000";
+
+document.getElementById("header").src = "https://i.ibb.co/7kNPSZJ/wg9951.gif";
+
+document.body.background = "https://i.ibb.co/qkK3C6C/6o15pu.gif";
+
+document.head.innerHTML += "<style>#results_container {color:#000000;} .inner_window_w_desc {background-color:#8c8c8c!important;}</style>";
+
+    document.head.innerHTML += `<link
+      rel="stylesheet"
+      href="https://unpkg.com/xp.css"
+    >`
+    document.head.innerHTML += `<style>
+    h3 {
+      font-size:1.17em!important;
+    }
+    h1 {
+      font-size:2em!important;
+    }
+  .overlay_window {
+	position: absolute;
+	opacity: 1;
+	filter: alpha(opacity=100);
+	background: #000;
+	border-style: double;
+	border-color: #C9C9C9;
+	height: 72%;
+	width: 54%;
+	top: 17%;
+	left: 25%;
+	z-index: 101
+}
+.overlay_window h3 {
+	margin: 0;
+	padding: .3em 0 .1em;
+	font-weight: 700;
+	font-size: 1.5em;
+	background-color: #ffffff;
+	border-bottom: double;
+	border-color: #707070
+}
+.overlay_window p {
+    color: #fff
+}
+    label {
+      font-size:1.02em!important;
+      font-family: Times New Roman, "Helvetica Neue", Helvetica, sans-serif!important;
+    }
+  body {display:flex!important;}
+  
+  #game_window{max-width:1000px;}
+    </style>`
+function addDynamicCSS() {
+    var css = `
+
+        label {
+          display:inline;
+        }
+
+        .inner_window_question h3 .mytooltip{
+            background-color: #8a9ebf;
+        }
+
+        .mytooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            background-color: #8a9ebf;
+        }
+
+        .mytooltip .mytooltiptext {
+            width: 240px;
+            background-color: #cad7ed;
+            color: 00ff11;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 99;
+            bottom: 20%;
+            left: 20%;
+            margin-left: -90px;
+            opacity: 0;
+            transition: opacity 0.1s;
+            border: 1px solid black;
+            pointer-events: none;
+            font-size: 13px !important;
+            line-height: 1.5em !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+        }
+
+        .mytooltip .mytooltiptext img {
+            max-width: 240px;
+            height: auto;
+        }
+
+        .mytooltip:hover .mytooltiptext {
+            opacity: 1;
+            transition-delay: 0.5s;
+        }
+    `;
+
+    var styleElem = document.createElement('style');
+    styleElem.type = 'text/css';
+    
+    styleElem.appendChild(document.createTextNode(css));
+    
+    document.head.appendChild(styleElem);
+}
+addDynamicCSS();
+tooltipList = [
+  {searchString: "Islamic Republic of Iran", explanationText: "<img src=https://i.ibb.co/X3C4Sh4/image.png> Killed Dubya. Intel says so!"},
+  {searchString: "Rummy", explanationText: "<img src=https://i.ibb.co/r0JmdL9/Donald-Rumsfeld-Exec-Dir-Cost-of-Living-Council-1.jpg><br>Old Don from the Nixon years."},
+  {searchString: "Iraq is a sovereign nation", explanationText: "Part of the game of play-pretend called \"international relations\"."},
+  {searchString: "Khuzestan", explanationText: "<img src=https://i.ibb.co/pnYZnDC/image.png> Plurality-Arab province in Iran with lots of oil."},
+  {searchString: "OPLAN 8044", explanationText: "<img src=https://upload.wikimedia.org/wikipedia/commons/f/f4/Julin_Divider.gif> Tick tock."},
+  {searchString: "Prison of Nations", explanationText: "Another word for archaic Empires."},
+  {searchString: "Abu Ghraib", explanationText: "<img src=https://i.ibb.co/QptSh0H/image.png> Girls just wanna have fun!"},
+  {searchString: "Unitary Executive Theory ", explanationText: "Führer Cheney's favorite interpretation of the Constitution."}
+]
+ class Song {
+    constructor(title, artist, coverLink, audioLink) {
+      this.title = title;
+      this.artist = artist;
+      this.coverLink = coverLink;
+      this.audioLink = audioLink;
+    }
+    getTitle() {
+      return this.title;
+    }
+  
+    getArtist() {
+      return this.artist;
+    }
+  
+    getCoverLink() {
+      return this.coverLink;
+    }
+  
+    getAudioLink() {
+      return this.audioLink;
+    }
+  }
+  
+  class Playlist {
+    constructor() {
+      this.songs = [];
+      this.currentSongIndex = 0;
+    }
+  
+    addSong(song) {
+      this.songs.push(song);
+    }
+  
+    getCurrentSong() {
+      return this.songs[this.currentSongIndex];
+    }
+  
+    playNext() {
+      this.currentSongIndex = (this.currentSongIndex + 1) % this.songs.length;
+    }
+  
+    playPrevious() {
+      this.currentSongIndex = (this.currentSongIndex - 1 + this.songs.length) % this.songs.length;
+    }
+  }
+  window.Playlist=Playlist
+  window.Song=Song
+  
+  function changePlaylist(newPlaylist) {
+    playlist = newPlaylist;
+    playlist.currentSongIndex = 0;
+    updateUI(playlist);
+    const audio = document.getElementById("audio");
+    audio.src = playlist.getCurrentSong().audioLink;
+    audio.play();
+  }
+  window.changePlaylist=changePlaylist
+  
+  function updateUI(playlist) {
+      const currentSong = playlist.getCurrentSong();
+      var player = document.getElementById("player");
+      player.querySelector("#cover").src = currentSong.getCoverLink();
+      player.querySelector("#title").textContent = currentSong.getTitle();
+      player.querySelector("#artist").textContent = currentSong.getArtist();
+  }
+  
+  window.updateUI=updateUI
+  
+  
+  function setupMusicPlayer() {
+    playlist = new Playlist();
+  
+  
+    const song1 = new Song(
+      "Confutatis / Lacrimosa",
+      "Wolfgang Amadeus Mozart",
+      "https://i.scdn.co/image/ab67616d0000b27341a5377f96091fff7965f8fa",
+      "https://audio.jukehost.co.uk/xlOcpB4G2cBOOAowwSsvDZbv3pCpCFZ0"
+    );
+    
+    const song2 = new Song(
+      "Amukiriki (The Lord Willing)",
+      "Les Paul & Mary Ford",
+      "https://i.ibb.co/b2hg1Mn/image.png",
+      "https://audio.jukehost.co.uk/IlVVYg1spjZV767G8PbtlMzW6OD5beod"
+    );
+  
+    const song3 = new Song(
+      "Yellow Rose of Texas",
+      "Johnny Desmond",
+      "https://i.discogs.com/wGnxsHQk7wnGJdFYUnlNkMlSdCqz8kH2fB6yCaCA-70/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIxNDgz/NzMtMTI2NjYzMjkw/OC5qcGVn.jpeg",
+      "https://audio.jukehost.co.uk/Xd6tcs15rCTLKSPnufJIVajexFNeRZGS"
+    );
+  
+    const song4 = new Song(
+      "Red River Rock",
+      "Johnny & The Hurricanes",
+      "https://i.ibb.co/nkZK3JD/image-2024-12-09-170231801.png",
+      "https://audio.jukehost.co.uk/aLqkkN84cKjdepall8zmA8coJNR4p8Vs"
+    );
+  
+    const song5 = new Song(
+      "It's Now Or Never",
+      "Elvis Presley (with The Jordanaires)",
+      "https://i.discogs.com/djEdPaDpIqN4GvP9FhvupiuKuiUl14ijC50pjqkVZkE/rs:fit/g:sm/q:90/h:600/w:599/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NjYz/OTItMTUyMDQ3OTY2/NS02NjQ5LmpwZWc.jpeg",
+      "https://audio.jukehost.co.uk/THrX5btRj32sfOzgP8JBYND4giKafKJF"
+    );
+  
+    playlist.addSong(song1);
+    playlist.addSong(song2);
+    playlist.addSong(song3);
+    playlist.addSong(song4);
+    playlist.addSong(song5);
+  
+    const playerContainer = document.createElement("div");
+    playerContainer.id = "player";
+  
+   const displayBox = document.createElement("div");
+  displayBox.id = "display-box";
+  
+  const coverElement = document.createElement("img");
+  coverElement.id = "cover";
+  displayBox.appendChild(coverElement);
+  
+  const infoContainer = document.createElement("div");
+  infoContainer.id = "info-container";
+  infoContainer.style.backgroundImage = "url('https://i.ibb.co/s2csF3n/67repx.png')";
+  infoContainer.style.backgroundSize = "cover"; // Optional: adjust based on your needs
+  infoContainer.style.color = "black"; // Set text color to black
+  
+  const songInfo = document.createElement("div");
+  songInfo.id = "song-info";
+  
+  const titleElement = document.createElement("h3");
+  titleElement.id = "title";
+  titleElement.style.fontWeight = 'normal'; // Make it normal as per previous request
+  songInfo.appendChild(titleElement);
+  
+  const artistElement = document.createElement("p");
+  artistElement.id = "artist";
+  songInfo.appendChild(artistElement);
+  
+  infoContainer.appendChild(songInfo);
+  displayBox.appendChild(infoContainer);
+  
+  playerContainer.appendChild(displayBox);
+  
+  const controlsContainer = document.createElement("div");
+  controlsContainer.id = "controls-container";
+  
+  const controls = document.createElement("div");
+  controls.id = "controls";
+  
+  const prevButton = document.createElement("img");
+  prevButton.id = "prevButton";
+  prevButton.src = "https://i.ibb.co/NNZ77Jp/0ns58l.png";
+  prevButton.alt = "Previous";
+  controls.appendChild(prevButton);
+  
+  const playPauseButton = document.createElement("img");
+  playPauseButton.id = "playPauseButton";
+  playPauseButton.src = "https://i.ibb.co/8xqqpsz/9phz8w.png"; // Set the default play image
+  playPauseButton.alt = "Play/Pause";
+  controls.appendChild(playPauseButton);
+  
+  const nextButton = document.createElement("img");
+  nextButton.id = "nextButton";
+  nextButton.src = "https://i.ibb.co/k1Nrky1/vaacmd.png";
+  nextButton.alt = "Next";
+  controls.appendChild(nextButton);
+  
+  controlsContainer.appendChild(controls);
+  
+  playPauseButton.addEventListener("click", function () {
+    const audio = document.getElementById("audio");
+    if (audio.paused) {
+      audio.play();
+      playPauseButton.src = "https://i.ibb.co/8xqqpsz/9phz8w.png"; // Set the pause image
+    } else {
+      audio.pause();
+      playPauseButton.src = "https://i.ibb.co/JRBFbfb/3o92rh.png"; // Set the play image
+    }
+  });
+  
+  nextButton.addEventListener("click", function () {
+    playlist.playNext();
+    updateUI(playlist);
+    const audio = document.getElementById("audio");
+    audio.src = playlist.getCurrentSong().audioLink;
+    audio.play();
+  });
+  
+  prevButton.addEventListener("click", function () {
+    playlist.playPrevious();
+    updateUI(playlist);
+    const audio = document.getElementById("audio");
+    audio.src = playlist.getCurrentSong().audioLink;
+    audio.play();
+  });
+  
+    const progressBarContainer = document.createElement("div");
+    progressBarContainer.id = "progress-bar-container";
+  
+    const progressBar = document.createElement("progress");
+    progressBar.type = "range";
+    progressBar.id = "progress-bar";
+    progressBar.value = "0";
+    progressBar.max = "100";
+  
+  
+    progressBarContainer.appendChild(progressBar);
+    controlsContainer.appendChild(progressBarContainer);
+    playerContainer.appendChild(controlsContainer);
+  
+   const volumeContainer = document.createElement("div");
+    volumeContainer.id = "volume-container";
+
+  
+    const volumeSliderContainer = document.createElement("div");
+    //volumeSliderContainer.classList.add("is-vertical");
+    volumeSliderContainer.style.marginLeft = "0%";
+    volumeSliderContainer.style.height = "126px";
+  
+    const volumeSlider = document.createElement("input");
+    volumeSlider.type = "range";
+    volumeSlider.id = "volumeSlider";
+    volumeSlider.min = 0;
+    volumeSlider.max = 9;
+    volumeSlider.step = 1;
+    volumeSlider.value = 1; // Initial volume
+  
+    volumeSliderContainer.appendChild(volumeSlider);
+  
+    const volumeDisplay = document.createElement("span");
+    volumeDisplay.id = "volume-display";
+    volumeDisplay.style.fontWeight = 'bold'; 
+    volumeDisplay.style.display = 'none';
+    volumeDisplay.textContent = "1";
+  
+    volumeContainer.appendChild(volumeSliderContainer);
+    volumeContainer.appendChild(volumeDisplay);
+  
+    playerContainer.appendChild(volumeContainer);
+  
+    gameWindow_player.insertAdjacentElement("afterend", playerContainer);
+  
+  
+    function updateProgressBar() {
+      const audio = document.getElementById("audio");
+      const progress = (audio.currentTime / audio.duration) * 100;
+      try{progressBar.value = progress}
+    catch{}
+    }
+  
+   
+    progressBar.addEventListener("input", function () {
+      const audio = document.getElementById("audio");
+      const seekTime = (progressBar.value / 100) * audio.duration;
+      audio.currentTime = seekTime;
+    });
+  
+    const audio = document.createElement("audio");
+    audio.id = "audio";
+    audio.src = playlist.getCurrentSong().audioLink;
+    audio.volume = 1/9;
+  
+    audio.addEventListener("timeupdate", updateProgressBar);
+    audio.addEventListener("ended", function () {
+      // Play the next song when the current song ends
+      playlist.playNext();
+      updateUI(playlist);
+      audio.src = playlist.getCurrentSong().audioLink;
+      audio.play();
+    });
+  
+      let currentVolume = 1; // Initial volume
+  
+    volumeSlider.addEventListener("input", function () {
+      currentVolume = parseInt(volumeSlider.value, 10);
+      updateVolumeDisplay();
+      updateAudioVolume();
+    });
+  
+    function updateVolumeDisplay() {
+      volumeDisplay.textContent = currentVolume;
+    }
+  
+     function updateAudioVolume() {
+      const audio = document.getElementById("audio");
+      audio.volume = currentVolume / 9; // Set volume between 0 and 1
+    }
+  
+    document.body.appendChild(audio);
+    audio.play();
+  
+    // Update the UI when the page loads
+    updateUI(playlist);
+  }
+  
+  const style = document.createElement("style");
+  style.textContent = `
+  #player {
+      border: 3px solid #C9C9C9; /* Add your desired border style */
+      display: flex;
+      flex-direction: row;
+    height:191px;
+      background-Image: url("https://i.ibb.co/Wx9NBmQ/qls0kd.png");
+    }
+  
+    #display-box {
+      display: flex;
+      align-items: center;
+      width: 50%;
+    }
+  
+    #cover {
+      width: 176px;
+    height:176px;
+    }
+  
+    #info-container {
+      display: flex;
+      flex-direction: row;
+      height:178px;
+    width:127px;
+    margin-top: 3px;
+    }
+  
+    #song-info {
+      width: 100%;
+    padding:5px;
+    }
+  
+    #controls-container {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      margin: 10px;
+      width:100%;
+    padding-top:15px;
+    padding-left:20px
+  
+    }
+    #volumeSlider {
+        padding-top:88px;
+        padding-right:100px;
+  }
+  
+    #controls {
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      width: 80%;
+    }
+  
+    #progress-bar-container {
+      width: 70%;
+    }
+  
+    #progress-bar {
+      width: 100%;
+      margin: auto;
+      display: flex;
+      margin-Top: 20px;
+    }
+    
+  `;
+  
+  document.head.appendChild(style);
+  
+  const gameWindow_player = document.getElementById("game_window");
+  //use this function directly or put it in an event listener to start the music on the press of a certain button
+  setupMusicPlayer();
+
+//#endcode
