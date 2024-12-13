@@ -21,15 +21,6 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <script src="https://malsup.github.io/jquery.blockUI.js" type="text/javascript"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6KK5MD763"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-H6KK5MD763');
-    </script>
   </head>
   <body class="base" style="position:relative">
     <div style="display:none" id="cheatIndicator" class="cheatIndicator">AUTO-PLAY ENABLED</div>
@@ -201,9 +192,10 @@
                 <label for="sorting">Sort by:</label>
                 <select onchange="onChangeModSorter(event)" name="sorting" id="modSorting">
                   <option value="chrono">Year</option>
-                  <option value="mostFav">Popularity</option>
+                  <!-- I am leaving this commented out in case you need it for later to add more sorting options -->
+                  <!--<option value="mostFav">Popularity</option>
                   <option value="leastFav">Nicheness</option>
-                  <option value="mostPlays">Plays</option>
+                  <option value="mostPlays">Plays</option>-->
                 </select>
               </div>
               </div>
