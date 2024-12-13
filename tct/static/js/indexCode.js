@@ -178,9 +178,9 @@ nct_stuff.themes = {
     name: "OpenTCT",
     background: "../static/images/backgrounds/tct_background.jpg",
     banner: "../static/images/banners/tct_banner.png",
-    coloring_window: "#727C96",
-    coloring_container: "#222449",
-    coloring_title: "#3A3360",
+    coloring_window: "#647a7a",
+    coloring_container: "#cef0ed",
+    coloring_title: "linear-gradient(#43948e, #437494)",
     game_window: "A53545",
   },
   classic: {

@@ -80,7 +80,7 @@
 .tag-button {
     padding: 10px;
     font-weight: bold;
-    background-color : #BFE6FF;
+    background-color : #9bcccb;
     margin : 5px 5px 10px 10px;
     border-radius: 10px;
 }
@@ -92,7 +92,7 @@
 .community-grid-element {
     width: 23%;
     height: 25rem;
-    background-color : #BFE6FF;
+    background-color : #9bcccb;
     margin : 5px 5px 10px 10px;
     border-radius: 10px;
     display: flex;
@@ -120,7 +120,7 @@
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: rgb(85, 111, 176);
+  background-color: rgb(85, 168, 176);
   border: none;
   border-radius: 10px;
   margin: 5px;
@@ -129,7 +129,7 @@
 .hover-button:hover {background-color: rgb(76, 98, 154);}
 
 .hover-button:active {
-  background-color: rgb(85, 111, 176);
+  background-color: rgb(85, 168, 176);
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
@@ -242,7 +242,7 @@
   margin-top: 0px;
   font-size: xx-large;
   font-weight: bolder;
-  background-color: #BFE6FF;
+  background-color: #9bcccb;
   position: relative;
   cursor: pointer;
   user-select: none;
@@ -261,7 +261,7 @@
   text-align: center;
   justify-items: center;
   flex-wrap:wrap;
-  background-color: #BFE6FF;
+  background-color: #9bcccb;
   border-radius: 5px;
   padding:16px;
   padding-bottom:32px;
@@ -373,7 +373,7 @@
   text-decoration: none;
   outline: none;
   color: #ffffff;
-  background-color: rgb(85, 111, 176);
+  background-color: rgb(85, 168, 176);
   border: none;
   border-radius: 10px;
   margin: 5px;
@@ -439,7 +439,7 @@
 }
 
 .rating-background {
-  background-color: rgb(85, 111, 176);
+  background-color: rgb(85, 168, 176);
   width: 100%;
   border-radius: 0px 0px 10px 10px;
   color:white;

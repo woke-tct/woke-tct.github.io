@@ -4,7 +4,7 @@
 	padding: 0;
 	margin: 0;
 	display: block;
-	background-color: #BFE6FF
+	background-color: #9bcccb
 }
 
 .container {
@@ -645,7 +645,7 @@ h2.headline_pretty {
 }
 
 #game_window {
-	background-color: #BFE6FF;
+	background-color: #9bcccb;
 	margin: .5em;
 	border-style: solid;
 	border-color: #C9C9C9;
@@ -861,7 +861,7 @@ h2.headline_pretty {
 	padding: .3em 0 .1em;
 	font-weight: 700;
 	font-size: 1.5em;
-	background-color: #BFE6FF;
+	background-color: #9bcccb;
 	border-bottom: double;
 	border-color: #C9C9C9
 }
@@ -986,7 +986,7 @@ input.game_answers {
 	padding: .3em 0 .1em;
 	font-weight: 700;
 	font-size: 1.5em;
-	background-color: #BFE6FF;
+	background-color: #9bcccb;
 	border-bottom: double;
 	border-color: #C9C9C9
 }
@@ -1164,7 +1164,7 @@ input.game_answers {
 	float: left;
 	margin-top: 1em;
 	margin-left: 1em;
-	background-color: #BFE6FF
+	background-color: #9bcccb
 }
 
 #menu_container_poll {
@@ -1173,13 +1173,13 @@ input.game_answers {
 	float: left;
 	margin-top: 1em;
 	margin-left: 1em;
-	background-color: #BFE6FF
+	background-color: #9bcccb
 }
 
 #overall_result_container {
 	height: 50%;
 	width: 100%;
-	background-color: #BFE6FF
+	background-color: #9bcccb
 }
 
 #overall_result {
@@ -1216,7 +1216,7 @@ input.game_answers {
 #state_result_container {
 	height: 50%;
 	width: 100%;
-	background-color: #BFE6FF
+	background-color: #9bcccb
 }
 
 #state_result {
