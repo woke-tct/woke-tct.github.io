@@ -380,14 +380,14 @@
   padding: 10px 10px;
 }
 
-.mode-button:hover {background-color: rgb(76, 98, 154);}
+.mode-button:hover {background-color: rgb(53, 99, 99);}
 
 .mode-button:active {
-  background-color: rgb(53, 70, 113);
+  background-color: rgb(53, 99, 99);
 }
 
 .pressed {
-  background-color: rgb(53, 70, 113)!important;
+  background-color: rgb(53, 99, 99)!important;
 }
 
 /* Tooltip container */
