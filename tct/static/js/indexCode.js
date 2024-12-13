@@ -180,7 +180,7 @@ nct_stuff.themes = {
     banner: "../static/images/banners/tct_banner.png",
     coloring_window: "#647a7a",
     coloring_container: "#cef0ed",
-    coloring_title: "linear-gradient(#43948e, #437494)",
+    coloring_title: "#43948e",
     game_window: "A53545",
   },
   classic: {
