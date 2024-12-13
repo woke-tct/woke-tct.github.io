@@ -1830,7 +1830,7 @@ function divideElectoralVotesProp(e, t) {
                         "</label><br>";
                     }
                     var r =
-                      '<div class="game_header">    <h2>CAMPAIGN TRAIL SHOWCASE</h2>    </div>    <div class="inner_window_question">        <div class="inner_inner_window">        <h3>' +
+                      '<div class="game_header">    <h2>OpenTCT</h2>    </div>    <div class="inner_window_question">        <div class="inner_inner_window">        <h3>' +
                       i.questions_json[i.question_number].fields.description +
                       '</h3>            <div id="question_form">                <form name="question">' +
                       t +
@@ -1881,7 +1881,7 @@ function divideElectoralVotesProp(e, t) {
                       "</label><br>";
                   }
                   var r =
-                    '<div class="game_header">    <h2>CAMPAIGN TRAIL SHOWCASE</h2>    </div>    <div class="inner_window_question">        <div class="inner_inner_window">        <h3>' +
+                    '<div class="game_header">    <h2>OpenTCT</h2>    </div>    <div class="inner_window_question">        <div class="inner_inner_window">        <h3>' +
                     i.questions_json[i.question_number].fields.description +
                     '</h3>            <div id="question_form">                <form name="question">' +
                     t +
@@ -2009,7 +2009,7 @@ function divideElectoralVotesProp(e, t) {
                   "</label><br>";
               }
               var r =
-                '<div class="game_header">    <h2>CAMPAIGN TRAIL SHOWCASE</h2>    </div>    <div class="inner_window_question">        <div class="inner_inner_window">        <h3>' +
+                '<div class="game_header">    <h2>OpenTCT</h2>    </div>    <div class="inner_window_question">        <div class="inner_inner_window">        <h3>' +
                 i.questions_json[i.question_number].fields.description +
                 '</h3>            <div id="question_form">                <form name="question">' +
                 t +
