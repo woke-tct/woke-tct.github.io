@@ -272,7 +272,7 @@ populist_dict = {
 
 function geo_calc(num,mult) {
 	if (num >= 0) {
-		return 1+mult*0.05*(1-Math.pow(0.9, num))/0.1;
+		return 1+mult*0.08*(1-Math.pow(0.8, num))/0.2;
 	} else {
 		return 1-mult*0.05*(1-Math.pow(1.2, -num))/-0.2;
 	}
@@ -11497,11 +11497,10 @@ endingPicker = (out, totv, aa, quickstats) => {
 		unlockAchievement("A Movement Broken");
 	} else if (difficulty == "easy") {
 		unlockAchievement("A Movement Broken");
-		add_slide(ending_image_dict["anime"],slide_dict["progress"], true, true);
-		add_slide(ending_image_dict["earth"],slide_dict["roasian_flyby"], true, true);
+		add_slide(ending_image_dict["anime"],slide_dict["progress"], true, false);
+		add_slide(ending_image_dict["earth"],slide_dict["roasian_flyby"], false, true);
 	} else {
 		add_slide(ending_image_dict["reddit_mod"],slide_dict["reddit_mod"], true, true);
-		unlockAchievement("A Movement Broken");
 	}
 	
 	if (geopolitical_slide == "china_taiwan") {
