@@ -159,7 +159,7 @@ cyoAdventure = function (a) {
 		change_soundtrack(1);
 	}
 	if (e.question_number+1 == 14) {
-		dark_earth_theme();
+		setTimeout(dark_earth_theme,10);
 	}
 	if (ans == 10005) {
 		breakreality += 1;
@@ -175,7 +175,7 @@ cyoAdventure = function (a) {
 	}
 	if (ans == 30001) {
 		corrr = '<h2>THE CAMPAIGN TRAIL</h2><font id="wittyquote" size="4" color="white"><em>Part 1: The First Campaign</em></font>';
-		earth_theme();
+		setTimeout(earth_theme,10);
 		change_soundtrack(2);
 		fakevpscreen("gray");
 	}
@@ -307,16 +307,16 @@ cyoAdventure = function (a) {
 	if (ans == 80001) {
 		adjust_support(0.02);
 		optimal_answers += 1;
-		earth_theme();
+		setTimeout(earth_theme,10);
 	}
 	if (ans == 80002) {
-		earth_theme();
+		setTimeout(earth_theme,10);
 	}
 	if (ans == 80003) {
-		earth_theme();
+		setTimeout(earth_theme,10);
 	}
 	if (ans == 80004) {
-		earth_theme();
+		setTimeout(earth_theme,10);
 	}
 	if (ans == 80005) {
 		breakreality += 1;
@@ -351,7 +351,7 @@ cyoAdventure = function (a) {
 	}
 	if (ans == 110001) {
 		imageslide("https://i.imgur.com/1aX8UTt.png", true, "earth");
-		dark_earth_theme();
+		setTimeout(dark_earth_theme,10);
 	}
 	if (ans == 110003) {
 		optimal_answers += 1;
@@ -372,7 +372,7 @@ cyoAdventure = function (a) {
 	}
 	if (ans == 120003) {
 		imageslide("https://i.imgur.com/J4aHtyW.png", false, "earth");
-		dark_earth_theme();
+		setTimeout(dark_earth_theme,10);
 	}
 	if (ans == 120004) {
 		imageslide("https://i.imgur.com/eu2hLPI.png", false);
@@ -388,7 +388,7 @@ cyoAdventure = function (a) {
 	}
 	if (ans == 130001) {
 		imageslide("https://i.ibb.co/d0MdtnT/image.png", true, "earth");
-		dark_earth_theme();
+		setTimeout(dark_earth_theme,10);
 	}
 	if (ans == 140002) {
 		optimal_answers += 1;
@@ -402,7 +402,7 @@ cyoAdventure = function (a) {
 	if (ans == 170001) {
 		end_the_game = 1;
 		e.questions_json[getQuestionNumberFromPk("question18")]=getQuestion("ignorant_bliss");
-		earth_theme();
+		setTimeout(earth_theme,10);
 		campaignTrail_temp.election_json[0].fields.advisor_url = advisor_image["sarah_mark"];
 		update_EV_dict();
 		if (return_highest("ev") == 300) {
@@ -578,7 +578,7 @@ cyoAdventure = function (a) {
 	}
 	if (ans == 230004) {
 		campaignTrail_temp.questions_json[24]=getQuestion("resign");
-		dark_earth_theme();
+		setTimeout(dark_earth_theme,10);
 		end_the_game = 1;
 		campaignTrail_temp.election_json[0].fields.advisor_url = advisor_image["sarah_mark"];
 		ending = "stargazing";
@@ -733,7 +733,7 @@ cyoAdventure = function (a) {
 		campaignTrail_temp.election_json[0].fields.advisor_url = advisor_image["sarah_mark"];
 	}
 	if (ans == 340008) {
-		stargazing_theme();
+		setTimeout(stargazing_theme,10);
 		imageslide("https://i.imgur.com/EgycIr3.png",false);
 		set_support(0);
 	}
@@ -780,7 +780,7 @@ cyoAdventure = function (a) {
 	}
 	if (ans == 1990001) {
 		imageslide("https://i.ibb.co/XxfJ3Yk/image.png",true, "earth");
-		dark_earth_theme();
+		setTimeout(dark_earth_theme,10);
 	}
 	// Intermission, Part 2 begins.
 	if (ans == 371002) {
@@ -862,7 +862,7 @@ cyoAdventure = function (a) {
 		campaignTrail_temp.candidate_json[1]["fields"]["last_name"] = "New World Democrats";
 	}
 	if (ans == 410001) {
-		congress_theme();
+		setTimeout(congress_theme,10);
 		congress_relations = 0;
 		militarization = 0;
 		willing_change = 3;
@@ -1531,7 +1531,7 @@ function intro_fakeout() {
 	campaignTrail_temp.running_mate_image_url = 'https://i.imgur.com/F6hwuZA.png';
 	campaignTrail_temp.candidate_json[0]["fields"].first_name = "Gray";
 	campaignTrail_temp.candidate_json[0]["fields"].last_name = "Patterson";
-	dark_theme();
+	setTimeout(dark_theme,10);
 	campaignTrail_temp.election_json[0].fields.advisor_url = advisor_image["blank_space"];
 	imageslide("https://i.imgur.com/5DMhB9H.png", true, "dark")
 }
@@ -1539,7 +1539,7 @@ function intro_fakeout() {
 // campaignTrail_temp.running_mate_last_name = 'Harris';
 // campaignTrail_temp.running_mate_image_url = 'https://campaigntrailshowcase.com/static/images/kamala-harris-2020.jpg';
 
-function earth_theme() {
+function setTimeout(earth_theme,10) {
 	campaignTrail_temp.candidate_last_name = 'Patterson';
 	campaignTrail_temp.running_mate_last_name = 'Eastwood';
 	campaignTrail_temp.candidate_image_url = 'https://i.imgur.com/2Lmm31K.png';
@@ -1562,7 +1562,7 @@ function earth_theme() {
 	applyNewTheme();
 }
 
-function congress_theme() {
+function setTimeout(congress_theme,10) {
 	campaignTrail_temp.candidate_last_name = 'Patterson';
 	campaignTrail_temp.running_mate_last_name = 'Eastwood';
 	campaignTrail_temp.candidate_image_url = 'https://i.imgur.com/2Lmm31K.png';
@@ -1585,7 +1585,7 @@ function congress_theme() {
 	applyNewTheme();
 }
 
-function dark_earth_theme() {
+function setTimeout(dark_earth_theme,10) {
 	
 	header_color = "rgb(58 85 85)";
 	outer_game_window_color = "rgb(58 85 85)";
@@ -1604,7 +1604,7 @@ function dark_earth_theme() {
 	applyNewTheme();
 }
 
-function stargazing_theme() {
+function setTimeout(stargazing_theme,10) {
 	
 	header_color = "black";
 	outer_game_window_color = "black";
@@ -1623,7 +1623,7 @@ function stargazing_theme() {
 	applyNewTheme();
 }
 
-function reality_seam_theme() {
+function setTimeout(reality_seam_theme,10) {
 	
 	header_color = "#002f2f";
 	outer_game_window_color = "#002f2f";
@@ -1650,7 +1650,7 @@ function pioneer() {
 	campaignTrail_temp.running_mate_image_url = 'https://i.imgur.com/F6hwuZA.png';
 }
 
-function dark_theme() { 
+function setTimeout(dark_theme,10) { 
 	header_color = "#555555";
 	outer_game_window_color = "#000000";
 	outer_descriptive_window_color = "#333333";
@@ -1767,7 +1767,6 @@ function switch_scores() {
 }
 
 function getQuestionNumberFromPk(pk) {
-	console.log(campaignTrail_temp.questions_json.map(q=>q.pk).indexOf(pk));
     return campaignTrail_temp.questions_json.map(q=>q.pk).indexOf(pk);
 }
 
@@ -1857,10 +1856,10 @@ e.image_slide = (url, scroll, aftertheme) => { /* Clearly based on the VP Switch
 		
 	$("#image_button").click((_e)=>{
 		if (aftertheme == "dark") {
-			dark_theme();
+			setTimeout(dark_theme,10);
 		}
 		if (aftertheme == "earth") {
-			earth_theme();
+			setTimeout(earth_theme,10);
 		}
 		
 
@@ -1972,7 +1971,7 @@ e.vpSwitcher = () => {
 		}
 		if (pot_run_mat[0].fields.first_name == "Sarah"){
 			imageslide("https://i.imgur.com/n9SHAy9.png", true, "none");
-			dark_earth_theme();
+			setTimeout(dark_earth_theme,10);
 			do_achievement("Hello World!");
 		}
 		$("#inner_window_4").remove();
@@ -18078,7 +18077,7 @@ endingPicker = (out, totv, aa, quickstats) => {
 	}
 	if (ending == "stargazing") {
 		setImage("https://i.imgur.com/pAVvOcc.png");
-		stargazing_theme();
+		setTimeout(stargazing_theme,10);
 		return `<span style='color: white;' id="ending_text"><h3>Stargazing at the End of Time</h3><div style='background: black; color: white; overflow-y:scroll; height:235px;'><p>You look up at the inky expanse above you, and your best friends are around you. And you remember how grateful you are to have them.<br><br>"Just one more time, you say. Thank you guys for everything. You guys are the best friends I could ever ask for," you say.<br><br>"Anytime," Mark says, once again. Sarah continues to be silent.<br><br>The shared silence is all you need.</p></div></span>`
 	}
 	if (ending == "notes") {
@@ -18086,7 +18085,7 @@ endingPicker = (out, totv, aa, quickstats) => {
 		audio.src = "https://audio.jukehost.co.uk/Ar3JJsCqTT3sa19CphKWOJhO2wOVWzSv";
 		audio.currentTime = 0;
 		audio.loop = true;
-		reality_seam_theme();
+		setTimeout(reality_seam_theme,10);
 		do_achievement("Seam 1");
 		return `<span style='color: white;' id="ending_text"><h3>Reality Seam #1</h3><div style='color: white; overflow-y:scroll; height:235px;'><p>REALITY FRAGMENT DETECTED.<br><br>FRAGMENT ID = 1<br><br>“SEAM 1” ACHIEVEMENT GIVEN.<br><br>ACHIEVEMENT CONDITIONS: READ THE NOTES<br><br>LOG TIMELINE.00001.01, 21030 AD<br><br>“THE FIRST TIMELINE”<br><br>…<br><br>Excerpt from Sarah’s Diary:<br><br><span style="color:#e1a0ff">“Today a voice appeared to me, after I was running experiments on the simulation hypothesis. He claimed to be the author of our reality, and he proved it.<br><br>I thought it was just my delirious mind, and that I had gone crazy, after countless sleepless nights working on this problem. But this voice assured me that I wasn’t. It explained that reality was made up of layers, and that we were one layer down from him. I asked him if he was God, he answered he was our closest emissary to him.<br><br>I… Talked about my feelings with him, and the voice… Rambled on for a bit. He assured me everything was going to be okay. But he gave me a cube, something that can access the source code of our universe. He said this was the tool the Quadratic Angels used to modify our universe.<br><br><span title='Play perfectly optimally before the start of the campaign.' style='background: dimgray;'>I’m feeling rather overwhelmed right now. I’m going to sleep and thinking over this some more in the morning.”</span></span><br><br></p></div></span>`
 	}
@@ -18095,7 +18094,7 @@ endingPicker = (out, totv, aa, quickstats) => {
 		audio.src = "https://audio.jukehost.co.uk/Ar3JJsCqTT3sa19CphKWOJhO2wOVWzSv";
 		audio.currentTime = 0;
 		audio.loop = true;
-		reality_seam_theme();
+		setTimeout(reality_seam_theme,10);
 		do_achievement("Seam 2");
 		return `<span style='color: white;' id="ending_text"><h3>Reality Seam #2</h3><div style='color: white; overflow-y:scroll; height:235px;'><p>REALITY FRAGMENT DETECTED.<br><br>FRAGMENT ID = 2<br><br>“SEAM 2” ACHIEVEMENT GIVEN.<br><br>ACHIEVEMENT CONDITIONS: PLAY PERFECTLY OPTIMALLY<br><br>LOG TIMELINE.00001.02, 21032 AD<br><br>“THE FIRST TIMELINE”<br><br>…<br><br>Excerpt from Sarah’s Diary:<br><br><span style="color:#e1a0ff">“The Quadratic Angels could not be trusted. Somehow, receiving the cube from that voice tripped them up. They’re just outside Low Earth orbit. We’ve seen what they’ve done to the space colonies, they want our complete extinction, and I don’t even know why.<br><br>Gray is doing everything he can to prepare the world for war, but our chances are looking grim. I’ve crunched the numbers, World War 3 did a number on Earth’s defensive capabilities. <br><br>I’ve seen him, he’s different now… He’s no longer the kid I grew up with, he understands the gravity of the situation, and the born leader we saw in him is finally coming out. I’m proud of him, he’s grown so much.<br><br>I turn on the news and it frightens me. NASA is doing everything it can to evacuate the orbital colonies, a few of those refugees have already returned back to America. They described how they masacred their neighborhoods, razing their cities to the ground, leaving nothing but orbital debris. Each country has been taking back their own citizens.<br><br>Mark has started taking us all to his church. A Catholic one not too far from where we grew up in Pennsylvania. It’s crowded now, packed with people trying to find direction in these desperate times. He’s trying to keep us calm in troubling times, but I can see he’s trying to reassure himself as much as he is trying to reassure us. He prays a lot more nowadays.<br><br><span title='Play perfectly suboptimally (Non-perfectly) before the start of the campaign.' style='background: dimgray;'>I’ve begun praying as well, if there is a God out there, we desperately need his help.”</span></span><br><br></p></div></span>`
 	}
@@ -18104,7 +18103,7 @@ endingPicker = (out, totv, aa, quickstats) => {
 		audio.src = "https://audio.jukehost.co.uk/Ar3JJsCqTT3sa19CphKWOJhO2wOVWzSv";
 		audio.currentTime = 0;
 		audio.loop = true;
-		reality_seam_theme();
+		setTimeout(reality_seam_theme,10);
 		do_achievement("Seam 3");
 		return `<span style='color: white;' id="ending_text"><h3>Reality Seam #3</h3><div style='color: white; overflow-y:scroll; height:235px;'><p>REALITY FRAGMENT DETECTED.<br><br>FRAGMENT ID = 3<br><br>“SEAM 3” ACHIEVEMENT GIVEN.<br><br>ACHIEVEMENT CONDITIONS: PLAY PERFECTLY SUBOPTIMALLY<br><br>LOG TIMELINE.00001.03, 21036 AD<br><br>“THE FIRST TIMELINE”<br><br>…<br><br>Excerpt from Sarah’s Diaries:<br><br><span style="color:#e1a0ff">They touched down in Africa, mountains upon mountains of bodies. Like an all-consuming swarm of locusts they slaughtered. We couldn’t save them… We couldn’t save them.<br><br>So much of humanity is lost. So much of humanity that can never be replaced. The Old World is overrun. They chewed up Africa, then the Middle East and India, then they took out Europe, they did everything they could to resist. China was the one who held out the longest. Gray sent over the American Expeditionary Force to try and save them… We’ll never see them again.<br><br>The other day, I saw an old man who was the only survivor from his village, and became responsible for tallying the names of the all the people who have died. And broke down crying when he couldn’t remember them.<br><br>Cultures have already been annihilated, young men carrying on rituals they can’t remember the purpose of, trying futilely to somewhat honor their dead. The mood among the refugees is overwhelming dread.<br><br>I remember a woman, driven insane by her grief, she would call out to people who were no longer there. We checked, they were in our databases. Her culture, her people, they were all gone. She realized there was nothing left for her on this Earth. She took her own life the other day. The priest said she went to be with God. I don't know if he is still watching.<br><br>Gray has come into his own as a leader. Inspiring people and rallying them to carry on. We’ve done a lot of damage to the invasion force, we’ve obliterated about half of their invasion force, but in a war of attrition, it looks like humanity is going to give out first.<br><br>They’re taking out the Pacific Islands one by one. Australia fell the other day, the last remnants of Britain have now fled to America. Japan went down detonating nuclear weapons on its own soil to slow them down. It’s just the Americas that are left.<br><br>Gray has made the difficult decision to sacrifice Latin America to buy more time, they’re being left to fend for themselves. The plan is to try to bleed them out in North America, and hope there’s enough of humanity to rebuild afterwards. America is being turned into a fortress.<br><br>Refugees from all over the world have made it to America. Their numbers are never ending, yet heartbreakingly few. Out of the billions of people destroyed by the invasion of the Angels, only a few million ever make it to American shores. I see their faces when I close my eyes.<br><br> <span title='Slide a certain slider to the right.' style='background: dimgray;'>Dreadful, mourning faces.”</span></span><br><br></p></div></span>`
 	}
@@ -18113,7 +18112,7 @@ endingPicker = (out, totv, aa, quickstats) => {
 		audio.src = "https://audio.jukehost.co.uk/Ar3JJsCqTT3sa19CphKWOJhO2wOVWzSv";
 		audio.currentTime = 0;
 		audio.loop = true;
-		reality_seam_theme();
+		setTimeout(reality_seam_theme,10);
 		do_achievement("Seam 4");
 		return `<span style='color: white;' id="ending_text"><h3>Reality Seam #4</h3><div style='color: white; overflow-y:scroll; height:235px;'><p>REALITY FRAGMENT DETECTED.<br><br>FRAGMENT ID = 4<br><br>“SEAM 4” ACHIEVEMENT GIVEN.<br><br>ACHIEVEMENT CONDITIONS: ACHIEVE 538 ELECTORAL VOTES<br><br>LOG TIMELINE.00001.04, 21041 AD<br><br>“THE FIRST TIMELINE”<br><br>…<br><br>Excerpt from Sarah’s Diaries:<br><br><span style="color:#e1a0ff">“We’ve now survived longer than the Chinese did. Canada is gone, so is Mexico and the Caribbean. It’s only us now, fighting on the edge of our lives. We’ve thinned out their numbers, they’re down to maybe a fifth of the army they’ve started with. But fortress America is in ruins, we’re down to a bunch of heavily fortified bunkers, scattered across the country.<br><br>Mark is dead, the Angels got to him, and they broadcast his execution for Gray to watch. Gray has almost completely fallen apart, I think I’m the last thing tethering him to any form of sanity. Yet he keeps pressing on, he knows his spirit is all that is keeping humanity alive at this point.<br><br>I finally confessed my feelings for Gray. I don’t know if it was because I decided I finally had nothing left to lose, or if I wanted to give him something to hold onto. When I did so, he looked tired and old. “Why did you wait this long?” he finally said. I didn’t know how to answer. The relationship never really took off.<br><br>He talks to me like he talked to Mark sometimes. His hair is tattered and white, he looks like he's aged 40 years in the past 9. I wonder if he is trying to fill some kind of hole in his heart. He talks to nothing sometimes, and I try to comfort him when he stares out into space. He’s hardened a lot in the past few years, he’s not the mark, confident leader he was a few years ago, but he’s trying his best.<br><br>I have been hearing voices again. Angels, real angels from above have contacted me. They appear as balls of light, and they’re helping me work on a final project. <span title='Slide a certain slider to the left.' style='background: dimgray;'>With nothing left to lose, I put my trust in them.”</span></span><br><br></p></div></span>`
 	}
@@ -18122,7 +18121,7 @@ endingPicker = (out, totv, aa, quickstats) => {
 		audio.src = "https://audio.jukehost.co.uk/Ar3JJsCqTT3sa19CphKWOJhO2wOVWzSv";
 		audio.currentTime = 0;
 		audio.loop = true;
-		reality_seam_theme();
+		setTimeout(reality_seam_theme,10);
 		do_achievement("Seam 5");
 		return `<span style='color: white;' id="ending_text"><h3>Reality Seam #5</h3><div style='color: white; overflow-y:scroll; height:235px;'><p>REALITY FRAGMENT DETECTED.<br><br>FRAGMENT ID = 5<br><br>“SEAM 5” ACHIEVEMENT GIVEN.<br><br>ACHIEVEMENT CONDITIONS: ACHIEVE LESS THAN 1% OF THE POPULAR VOTE><br><br>LOG TIMELINE.00001.05, 21041 AD<br><br>Excerpt from Sarah’s Diaries:<br><br>…<br><br><span style="color:#e1a0ff">“The project is completed. The angels tell me it is a time machine, one that resets back to the year 21028. When Gray was just starting out with his presidential campaign.<br><br>With this, humanity has a second chance. And a third, and a 4th; however many times it takes to get it right. They inform me that using this will shatter this timeline, scattering the broken shards of me to all the other Sarah’s that come after. My mind is numb, our world lies in ruins. There is nothing left for me here.<br><br>They say Gray will retain past memories, at least partially. It will be him who remembers the most with every reset. I’ve made peace with this. The Angels are at our gates, and this timeline is not one to be salvaged.<br><br>Goodbye Gray, goodbye world.<br><br><span title='Mess up at every opportunity without diverting to another ending.' style='background: dimgray;'>May our happy ending be found in another timeline.</span></span><br><br><button onclick='document.getElementById("ending_text").innerHTML = end_dict["messup_2"]'>Next Page</button></p></div></span>`
 	}
@@ -18131,7 +18130,7 @@ endingPicker = (out, totv, aa, quickstats) => {
 		audio.src = "https://audio.jukehost.co.uk/Ar3JJsCqTT3sa19CphKWOJhO2wOVWzSv";
 		audio.currentTime = 0;
 		audio.loop = true;
-		reality_seam_theme();
+		setTimeout(reality_seam_theme,10);
 		return `<span style='color: white;' id="ending_text"><h3>Reality Seam #7</h3><div style='color: white; overflow-y:scroll; height:235px;'><p>Normally, there would be an ending here. But it's so spoiler laden I've redacted it for now. If you're the author trying to remember what's supposed to be put here. Codename: Cosmic Pyramid.</p></span>`
 	}
 	if (ending == "messup") {
@@ -18139,7 +18138,7 @@ endingPicker = (out, totv, aa, quickstats) => {
 		audio.src = "https://audio.jukehost.co.uk/Ar3JJsCqTT3sa19CphKWOJhO2wOVWzSv";
 		audio.currentTime = 0;
 		audio.loop = true;
-		reality_seam_theme();
+		setTimeout(reality_seam_theme,10);
 		do_achievement("Seam 6");
 		return `<span style='color: white;' id="ending_text"><h3>Reality Seam #6</h3><div style='color: white; overflow-y:scroll; height:235px;'><p><button onclick='document.getElementById("ending_text").innerHTML = end_dict["reality2"]'>Hide Gray's perspective.</button><br><br>REALITY FRAGMENT DETECTED.<br><br>FRAGMENT ID = 6<br><br>ERROR. NO ACHIEVEMENT FOUND.<br><br>LOG TIMELINE.00001.06, 21030 AD <span style="color:gray;background:black">"Where am I?"</span><br><br>ERROR. LOADING REALITY FRAGMENT... <span style="color:gray;background:black">"What?"</span><br><br>REALITY FRAGMENT LOADED. RENDERING.<br><br>...<br><br>Sarah looked over her <span style="color:gray;background:black">"Sarah!"</span> console, it was near the end of Gray’s first term. She breathed in and out, <span style="color:gray;background:black">"Sarah, are you okay?"</span> and began to laugh, and began to cry. <span style="color:gray;background:black">"SARAH!"</span> It was over, it was finally over. The statistical analysis had come back, all results were positive. <span style="color:gray;background:black">"HELLO!?"</span> After months of torturous work, she had proved it. <span style="color:gray;background:black">"Goddammit. She can't hear me."</span> None of them were real, they all lived in a simulation. She looked down at her hands, they were shaking. <br><br>She laughed, oh she laughed like a maniac. She just kept laughing, and laughing. <span style="color:gray;background:black">"Sarah..."</span><br><br> A notification popped up on her monitor. A message from an unknown source. Sarah’s laughing faded as she slowly calmed down and gathered herself. Slowly but surely, she dragged the cursor over to the notification.<br><br>The console went blank, and was replaced by a blank terminal. And in the next few seconds, the following message was typed.<br><br>“Hello Sarah. I am the author of your reality. I am here because I want to throw you a bone. Don’t be mistaken, it would be impossible for you to prove you are in a simulation if I did not want you to. But your story deserves a happy ending. So here I am, what do you want?”<br><br>Hands trembling, her hands went back to the console.<br><br>“Is this some kind of prank? If you really are some kind of all-powerful being over reality, then prove it.”<br><br>Suddenly, a small cube appeared right next to Sarah, where she could see it, levitated some 10 feet into the air, began to glow, then exploded. The shockwaves knocking Sarah off balance and back a few centimeters. <span style="color:gray;background:black">"OH MY GOD! SARAH! ARE YOU OKAY!?"</span><br><br>“That proof enough?” the console asked. “I am not here to harm you. So please, do not feel too alarmed.” <span style="color:gray;background:black">"EASY FOR YOU TO SAY. YOU'RE LUCKY YOU DIDN'T HURT HER! TRY THAT AGAIN AND I WILL BEAT YOUR ASS YOU SON OF A BI---!" </span><br><br> <span style="color:cyan">“I can hear you, you know,”</span> the voice said. <span style="color:gray;background:black">"Are you talking to me?"</span><span style="color:cyan"> “I assure you, she is not hurt.”</span> <span style="color:gray;background:black">"You can hear me? What kind of sorcery is this?"</span><br><br>“What?” Sarah asked. “Don't worry about it,” the voice responded. Sarah bent forward to type something more into her console, but a voice appeared from all around her. “Oh, don’t bother with that now. I can hear you just fine this way. You probably have a lot of questions, so ask away. I have all the time in the world… Well, all of your time, that is.”<br><br>Sarah was stunned silent for a moment. “I’m going crazy…” <span style="color:gray;background:black">"No you're not Sarah..."</span><br><br>“No, you are not,” the voice quite firmly said. “You have what is essentially the word of God that you are quite sane. Now like I said, I will answer any questions you may have, the best I can.”<br><br>Sarah was quiet for a little bit. What embers of faith remained in her soul were suddenly kindled.<br><br>“… Are you God?” she asked.<br><br>“No, but I’m his closest emissary,” the voice replied. “From your point of view, I am the closest thing to God you can communicate with. Or maybe he’s looking down on us all. I wouldn’t know for sure.”<br><br>“… What do you mean you don’t know? You’re the creator of reality, aren’t you?” Sarah asked.<br><br>“It isn’t that much more clear up here either. It’s still just as confusing as it is for you. I’m personally a Christian, a pretty devout one at that, but plenty of people on my level would disagree with that. Maybe our level is also in a simulation, maybe it just goes on forever. Maybe God is just one level above me, maybe he’s 10,000 levels above me, with thousands of intermediaries in between. I don’t know, all I can tell you is that you’re one level down.” The voice replied.<br><br>“Oh my God…” She cried. “Oh my God…”<br><br>“Hey…” the voice said. “Hey, here now, it’s alright.”<br><br>“No it’s not!” Sarah screamed. “We’re not real, nothing is real. My feelings for Mark, my feelings for Gray… They mean nothing. It was all for nothing…”<br><br><span style="color:white;background:black">The ghostly apparation of Gray, who was merely observing these events, walked over to besides Sarah, and tried to place his ghostly hand on her shoulder, trying to comfort her. He hoped even through the veil seperating them, he could still somehow comfort her.</span><br><br>The voice put on a tone of confusion. “What do you mean you’re not real? All stories are at least a little bit real.”<br><br>The voice paused. “Look, the way I see it, we’re all stories of some extent. When an author puts a bit of his heart and soul into something, it becomes just a little bit more real. The more you pour into a project, the more real it becomes. And when it’s enjoyed and experienced by thousands of people worldwide, then it becomes very real. I think there’s a reason why we treat fictional media like they’re real, I think it’s true to some extent. I think even the real world is just a fiction in the mind of someone else, we are all fictional in the mind of God… But that’s just my opinion. I’m pretty sure I would be crucified at my local church if I voiced half of these thoughts.”<br><br>Sarah just stared blankly at nothing in particular.<br><br>“Sorry, I get sidetracked a lot. <span style="color:gray;background:black">"Yes you do."</span> Happens in real life too,” <span style="color:gray;background:black">"I f---ing bet."</span> the voice continued. “Getting back to my original point, what do you want?”<br><br>“Can you take us to your reality? Can you take us up a level, the entire world?” Sarah asked.<br><br>“I’m afraid that’s far beyond my capabilities, I can only grant wishes within your level of reality,” the voice replied.<br><br>“Then can you make a world where all of us are happy? Just a happy ending where we can all live out our lives in peace?” Sarah asked.<br><br>“That I can do,” the voice replied. “I’ve created a path just so you can do that. I’ve already helped you to the first step. It’s up to you to find the remaining steps.”<br><br>“But why? Can’t you just snap your fingers and make it happen?” Sarah asked.<br><br>“I could. But this is not about demonstrating my strength, but instead to develop yours. God does not do all of the work, not because he can’t, but because he wants us to become marker on our own. I want you to make it by your own strength of will, and when you do, you will be glad that you did. That is why God will not lift everything for us, and why I will not lift everything for you,” the voice replied.<br><br>Sarah looked down glumly.<br><br>“But I know that’s not all you want,” the voice replied. “I know about your feelings for Gray.” <span style="color:gray;background:black">"..."</span><br><br>Sarah was silent, but only buried her head further into her knees.<br><br>“I just don’t know if he shares the same feelings for me. I wish he did,” Sarah said. <span style="color:gray;background:black">"..."</span><br><br>“I can force Gray to fall in love with you,” the voice said. “But I don’t think that’s what you want.”<br><br>“No, it isn’t,” Sarah sighed. <span style="color:gray;background:black">"..."</span><br><br>“Before I go, this is for you,” the voice said. And from the air, a small cube materialized right next to Sarah. Though it was a solid that could be held, looking into it, it looked like looking into another universe.<br><br>“What’s this?” Sarah asked.<br><br>“The source code of your reality,” he says. “This, is what the Quadratic Angels have been using to alter your reality. Though you will be the one who opens it, it will ultimately be Gray who goes through and chooses the reality he wants. You’ll still need other technology to create a gateway to make it work properly, of course. That’s up to you to figure out.” <span style="color:gray;background:black">"..."</span><br><br>“What if I can’t figure it out?”<br><br>“I will make sure you can figure it out.” <span style="color:gray;background:black">"...You got this Sarah. I believe in you."</span><br><br>The voice was quiet for a moment more. “I have to go now, do you have any last questions?”<br><br>“Wait, so if you created me, and then something created you, what created that?” Sarah asked. “Doesn’t that imply an infinite chain of creators, an infinite chain of causes? How does that make sense?”<br><br>The voice paused. “You are correct. It does not make sense. Every event needs a cause, yet the first cause cannot have a cause… Figure out this chain of thought to its logical conclusion, and you’ll begin to derive my religious beliefs. But that is not my place to enforce on you, or anyone else.”<br><br><span style="color:gray;background:black">"Are you talking to me?"</span> <span style="color:cyan">“Not exactly. Only partially.”</span> <span style="color:gray;background:black">"What the hell does that mean?"</span><br><br>There was another pause. “Goodbye Sarah.”<br><br>And Sarah was left with a blinking terminal, a source cube, and all the smarts in the world. She picked up the cube, and slowly began assembling another machine.<br><br>She didn’t know how she would do it, but she knew that she would be able to finish it.<br><br><span style="color:gray;background:black">"And I know how I'm going to help you."</span><br><br><span style="color:gray;background:black" title="End of reality seams.">"... I have a lot of thinking to do."</span></p></div></span>`
 	}
@@ -18180,14 +18179,3 @@ function add_slide(image, slide_content, first, last) {
 	}
 	slides.push([image, slide_content]);
 }
-
-newline = "";
-
-for (let n = 0; n<campaignTrail_temp.state_issue_score_json.length; n++) {
-	if (campaignTrail_temp.state_issue_score_json[n].fields.issue == 113) {
-		let state = state_dict_2[campaignTrail_temp.state_issue_score_json[n]["fields"]["state"]];
-		let issue_score = campaignTrail_temp.state_issue_score_json[n]["fields"]["state_issue_score"];
-		newline = newline+state+": "+issue_score+"\n";
-	}
-}
-console.log(newline);
