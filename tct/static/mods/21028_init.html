@@ -119,25 +119,24 @@ function append_achievement(name, recursive) {
 }
 
 function silent_unlock(name) {
-  const ach = findAchievementByName(name);
+	const ach = findAchievementByName(name);
 
-  if (ach == null) {
-    console.log("There is no achievement with the name '" + name + "'");
-    return;
-  }
+	if (ach == null) {
+	console.log("There is no achievement with the name '" + name + "'");
+	return;
+	}
 
-  if (cheatsActive && ach.cannotBeCheated) {
-    console.log(`Would unlock '${name}' but won't because cheating!`);
-    return;
-  }
+	if (cheatsActive && ach.cannotBeCheated) {
+	console.log(`Would unlock '${name}' but won't because cheating!`);
+	return;
+	}
 
-  unlockedAch[name] = ach;
-  localStorage.setItem("unlockedAch", JSON.stringify(unlockedAch));
-  addAllAchievements();
+	unlockedAch[name] = ach;
+	localStorage.setItem("unlockedAch", JSON.stringify(unlockedAch));
+	addAllAchievements();
 }
 
 for (let ach_name in allAch["21028"]) {
-	console.log(ach_name);
 	if (ach_list[ach_name] == null) {
 		delete allAch["21028"][ach_name];
 	}
@@ -146,6 +145,9 @@ for (let ach_name in allAch["21028"]) {
 // Set up all the achievements.
 campaignTrail_temp.achievements = {}
 append_achievement("Everywhere at the End of Time");
+if (localStorage["unlockedAch"] == null) { // This fixes a bug in case you have zero unlocked achievements so far.
+	localStorage["unlockedAch"] = {};
+}
 for (let ach_name in ach_list) {
 	if (JSON.parse(localStorage["unlockedAch"])[ach_name] != null) {
 		append_achievement(ach_name);
