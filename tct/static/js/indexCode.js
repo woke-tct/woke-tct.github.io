@@ -183,6 +183,15 @@ nct_stuff.themes = {
     coloring_title: "#43948e",
     game_window: "A53545",
   },
+  modjam: {
+    name: "Modding Jam",
+    background: "../static/images/backgrounds/tct_background.jpg",
+    banner: "../static/images/banners/jam_ntsc.png.png",
+    coloring_window: "#647a7a",
+    coloring_container: "#cef0ed",
+    coloring_title: "#43948e",
+    game_window: "A53545",
+  },
   classic: {
     name: "Classic",
     background: "",
@@ -199,8 +208,10 @@ nct_stuff.themes = {
 
 nct_stuff.selectedTheme = "";
 theme = window.localStorage.getItem("theme");
-
-if (theme == null) {
+if ( document.URL.includes("modjam") ) {
+  nct_stuff.selectedTheme = "modjam";
+}
+else if (theme == null) {
   nct_stuff.selectedTheme = "tct";
 } else {
   nct_stuff.selectedTheme = theme;
