@@ -217,16 +217,16 @@ $(document).ready(async function () {
     if (customMods.size > 0) {
       tagsFound.add("Custom");
     }
-    if (document.URL.includes("modjam")) {
-      tagsFound.prototype.delete("State");
-      tagsFound.prototype.delete("AltHist");
-      tagsFound.prototype.delete("Historical");
-      tagsFound.prototype.delete("International");
-      tagsFound.prototype.delete("Funny"); //set.remove does not exist...
-    }
-    else {
-      tagsFound.prototype.delete("Modjam"); 
-    }
+//    if (document.URL.includes("modjam")) {
+//      tagsFound.prototype.delete("State");
+//      tagsFound.prototype.delete("AltHist");
+//      tagsFound.prototype.delete("Historical");
+//      tagsFound.prototype.delete("International");
+//      tagsFound.prototype.delete("Funny"); //set.remove does not exist...
+//    }
+//    else {
+//      tagsFound.prototype.delete("Modjam"); 
+//    }
   });
 
   let allModsLength = mods.length - 1;
@@ -717,6 +717,19 @@ function modCompare2(a, b) {
   return 0;
 }
 
+function repopulateModTags(){
+  if (document.URL.includes("modjam")) {
+    tagsFound.prototype.delete("State");
+    tagsFound.prototype.delete("AltHist");
+    tagsFound.prototype.delete("Historical");
+    tagsFound.prototype.delete("International");
+    tagsFound.prototype.delete("Funny"); //set.remove does not exist...
+  }
+  else {
+    tagsFound.prototype.delete("Modjam"); 
+  }
+}
+
 function modCompare(a, b) {
   if (a.mod.value < b.mod.value) {
     return -1;
@@ -738,3 +751,5 @@ function setMode(evt, newMode) {
   evt.target.classList.add("pressed");
   mode = newMode;
 }
+
+repopulateModTags();
