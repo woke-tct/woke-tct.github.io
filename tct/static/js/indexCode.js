@@ -164,7 +164,7 @@ function changeFavicon(src) {
   document.head.appendChild(link);
 }
 
-changeFavicon("/static/showcase-fav.png");
+changeFavicon("/static/opentctfavico.gif");
 
 function choose(choices) {
   var index = Math.floor(Math.random() * choices.length);
