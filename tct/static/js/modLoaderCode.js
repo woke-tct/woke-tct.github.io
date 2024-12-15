@@ -464,9 +464,15 @@ function createTagButtons(tagsFound) {
     .forEach(function (tag) {
       const tagButton = document.createElement("div");
       if ( document.URL.includes("modjam") ) {
+        const modjaminternational = document.getElementById(International)
+        const modjamstate = document.getElementById(State)
+        const modjamalthist = document.getElementById(AltHist)
+        const modjamhistorical = document.getElementById(Historical)
+        modjaminternational.remove();
+        modjamstate.remove();
+        modjamalthist.remove();
+        modjamhistorical.remove();
         tagButton.classList.add("tag-button");
-        const nonmodjam = document.getElementsByClassName(tag-button)
-        nonmodjam.remove();
         tagButton.innerHTML = `
           <input type="checkbox" id="Modjam" name="Modjam" value="Modjam" checked>
           <label style="user-select:none" for="${tag}">${tag.replaceAll("_", " ")}</label><br>
@@ -474,6 +480,8 @@ function createTagButtons(tagsFound) {
       }
       else {
       tagButton.classList.add("tag-button");
+      const nonmodjam = document.getElementById(Modjam)
+      nonmodjam.remove();
       tagButton.innerHTML = `
       <input type="checkbox" id="${tag}" name="${tag}" value="${tag}" checked>
         <label style="user-select:none" for="${tag}">${tag.replaceAll("_", " ")}</label><br>
