@@ -217,12 +217,11 @@ $(document).ready(async function () {
     if (customMods.size > 0) {
       tagsFound.add("Custom");
     }
+    repopulateModTags();
   });
 
   let allModsLength = mods.length - 1;
   let modsLoaded = [];
-
-  repopulateModTags();
 
   // Set up from normal mods
   mods.forEach(async function (mod) {
