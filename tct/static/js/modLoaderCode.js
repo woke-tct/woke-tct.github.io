@@ -475,7 +475,6 @@ function createTagButtons(tagsFound) {
       else {
       tagButton.classList.add("tag-button");
       tagButton.innerHTML = `
-        <input type="checkbox" id="Modjam" name="Modjam" value="Modjam" disabled>
       <input type="checkbox" id="${tag}" name="${tag}" value="${tag}" checked>
         <label style="user-select:none" for="${tag}">${tag.replaceAll("_", " ")}</label><br>
         `;
