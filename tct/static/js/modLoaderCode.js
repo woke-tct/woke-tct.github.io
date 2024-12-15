@@ -218,14 +218,14 @@ $(document).ready(async function () {
       tagsFound.add("Custom");
     }
     if (document.URL.includes("modjam")) {
-      tagsFound.remove("State");
-      tagsFound.remove("AltHist");
-      tagsFound.remove("Historical");
-      tagsFound.remove("International");
-      tagsFound.remove("Funny");
+      tagsFound.prototype.delete("State");
+      tagsFound.prototype.delete("AltHist");
+      tagsFound.prototype.delete("Historical");
+      tagsFound.prototype.delete("International");
+      tagsFound.prototype.delete("Funny"); //set.remove does not exist...
     }
     else {
-      tagsFound.remove("Modjam"); 
+      tagsFound.prototype.delete("Modjam"); 
     }
   });
 
