@@ -219,7 +219,7 @@ $(document).ready(async function () {
     }
     if (document.URL.includes("modjam")) {
       tagsFound.delete("State");
-      tagsFound.delete("AltHist");
+      tagsFound.delete("Althist");
       tagsFound.delete("Historical");
       tagsFound.delete("International");
       tagsFound.delete("Funny"); //set.remove does not exist...
