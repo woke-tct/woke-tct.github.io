@@ -186,7 +186,7 @@ nct_stuff.themes = {
   modjam: {
     name: "Modding Jam",
     background: "../static/images/backgrounds/tct_background.jpg",
-    banner: "../static/images/banners/jam_ntsc.png.png",
+    banner: "../static/images/banners/jam_ntsc.png",
     coloring_window: "#647a7a",
     coloring_container: "#cef0ed",
     coloring_title: "#43948e",
