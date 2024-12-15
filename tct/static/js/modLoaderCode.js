@@ -217,7 +217,16 @@ $(document).ready(async function () {
     if (customMods.size > 0) {
       tagsFound.add("Custom");
     }
-    repopulateModTags();
+    if (document.URL.includes("modjam")) {
+      tagsFound.delete("State");
+      tagsFound.delete("AltHist");
+      tagsFound.delete("Historical");
+      tagsFound.delete("International");
+      tagsFound.delete("Funny"); //set.remove does not exist...
+    }
+    else {
+      tagsFound.delete("Modjam"); 
+    }
   });
 
   let allModsLength = mods.length - 1;
@@ -706,19 +715,6 @@ function modCompare2(a, b) {
     return 1;
   }
   return 0;
-}
-
-function repopulateModTags(){
-  if (document.URL.includes("modjam")) {
-    tagsFound.prototype.delete("State");
-    tagsFound.prototype.delete("AltHist");
-    tagsFound.prototype.delete("Historical");
-    tagsFound.prototype.delete("International");
-    tagsFound.prototype.delete("Funny"); //set.remove does not exist...
-  }
-  else {
-    tagsFound.prototype.delete("Modjam"); 
-  }
 }
 
 function modCompare(a, b) {
