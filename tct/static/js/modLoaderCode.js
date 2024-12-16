@@ -365,6 +365,8 @@ function createModView(mod, imageUrl, description, isCustom) {
     </div>
     <img class="mod-image" src="${imageUrl}"></img>
     <div ${theme ? `style="background-color:${theme.description_background_color}; color:${theme.description_text_color};"` : ""} class="mod-desc" >${description}</div>
+   <div ${theme ? `style="color:${theme.ui_text_color};"` : ""} class="modRating">LOADING FAVORITES...</div>
+        <div ${theme ? `style="color:${theme.ui_text_color};"` : ""} class="modPlayCount">LOADING PLAYS...</div>
     <div class="hover-button-holder">
         <button ${theme ? `style="background-color:${theme.secondary_color};"` : ""} class="mod-play-button hover-button" onclick="loadModFromButton(\`${mod.value}\`)"><span ${theme ? `style="color:${theme.ui_text_color};"` : ""}>${PLAY}</span></button>
         <button ${theme ? `style="background-color:${theme.secondary_color};"` : ""} class="hover-button" onclick="toggleFavorite(event, \`${mod.value}\`)"><span ${theme ? `style="color:${theme.ui_text_color};"` : ""}>${favText}</span></button>
@@ -386,6 +388,7 @@ function createModView(mod, imageUrl, description, isCustom) {
 
   modView.id = mod.value;
 
+  getFavsAndPlayCount(mod.value, modView);
   return modView;
 }
 
@@ -402,6 +405,52 @@ function renderAwards(awards, rawAwardUrls) {
     ${awardImages}
     </div>
     `;
+}
+
+async function getFavsAndPlayCount(modName, modView) {
+  if (customMods.has(modName)) return;
+
+  try {
+    const res = await fetch(
+      "https://cts-backend-w8is.onrender.com/api/get_mod?modName=" + modName,
+      {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      },
+    );
+    const ratingData = await res.json();
+    modView.getElementsByClassName("modRating")[0].innerHTML =
+      `<span style="font-weight:bold">${ratingData.favs} FAVORITES</span>`;
+    modView.getElementsByClassName("modPlayCount")[0].innerHTML =
+      `<span style="font-weight:bold">${ratingData.playCount ?? 0} PLAYS</span>`;
+    modView.dataset.favs = ratingData.favs;
+    modView.dataset.playCount = ratingData.playCount ?? 0;
+  } catch {
+    modView.getElementsByClassName("modRating")[0].innerHTML =
+      "Failed to get mod info. Try again later.";
+    modView.getElementsByClassName("modPlayCount")[0].innerHTML = ``;
+    modView.dataset.playCount = 0;
+    modView.dataset.favs = 0;
+  }
+}
+
+async function toggleFav(event, modName, favVal) {
+  if (customMods.has(modName)) return;
+
+  await fetch("https://cts-backend-w8is.onrender.com/api/rate_mod", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ modName: modName, rating: favVal }),
+  });
+
+  const modView = document.getElementById(modName);
+  await getFavsAndPlayCount(modName, modView);
 }
 
 function cycleAwards(img, awardUrls, index) {
@@ -578,9 +627,11 @@ function toggleFavorite(event, modValue) {
   if (!inFavorites) {
     favoriteMods.add(modValue);
     event.target.innerText = UNFAV;
+    toggleFav(event, modValue, 1);
   } else {
     favoriteMods.delete(modValue);
     event.target.innerText = FAV;
+    toggleFav(event, modValue, -1);
   }
   localStorage.setItem("favoriteMods", Array.from(favoriteMods));
 }
@@ -592,6 +643,7 @@ function loadRandomMod() {
 
 async function loadModFromButton(modValue) {
   if (modValue == "0000Random_Mod") {
+    setTimeout(() => updateModViewCount(modValue), 10000);
     loadRandomMod();
     return;
   }
@@ -630,8 +682,22 @@ async function loadModFromButton(modValue) {
   if (announcement !== null) {
     announcement.style.display = "none";
   }
+  setTimeout(() => updateModViewCount(modValue), 10000);
 
   window.scrollTo(0, 0); // Scroll to top
+}
+
+async function updateModViewCount(modName) {
+  if (customMods.has(modName)) return;
+
+  await fetch("https://fingereleven.1992coolrunnings.workers.dev", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ modName: modName }),
+  });
 }
 
 async function copyModLink() {
