@@ -272,9 +272,9 @@ populist_dict = {
 
 function geo_calc(num,mult) {
 	if (num >= 0) {
-		return 1+mult*0.08*(1-Math.pow(0.8, num))/0.2;
+		return mult*0.08*(1-Math.pow(0.8, num))/0.2;
 	} else {
-		return 1-mult*0.05*(1-Math.pow(1.2, -num))/-0.2;
+		return 0-mult*0.05*(1-Math.pow(1.2, -num))/-0.2;
 	}
 }
 
@@ -284,19 +284,19 @@ function base_turnout() {
 			let state = state_dict_2[campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state"]];
 			//console.log(campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state_multiplier"]);
 			if (populist_dict[state] != null) {
-				campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state_multiplier"] = campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state_multiplier"]*geo_calc(populist-3,populist_dict[state]);
+				campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state_multiplier"] = campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state_multiplier"]+geo_calc(populist-3,populist_dict[state]);
 				//console.log(geo_calc(populist-3,populist_dict[state]));
 			}
 			if (christian_dict[state] != null) {
-				campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state_multiplier"] = campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state_multiplier"]*geo_calc(christian-3,christian_dict[state]);
+				campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state_multiplier"] = campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state_multiplier"]+geo_calc(christian-3,christian_dict[state]);
 				//console.log(geo_calc(christian-3,christian_dict[state]));
 			}
 			if (darwinist_dict[state] != null) {
-				campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state_multiplier"] = campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state_multiplier"]*geo_calc(darwinist-3,darwinist_dict[state]);
+				campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state_multiplier"] = campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state_multiplier"]+geo_calc(darwinist-3,darwinist_dict[state]);
 				//console.log(geo_calc(darwinist-3,darwinist_dict[state]));
 			}
 			if (technocapitalist_dict[state] != null) {
-				campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state_multiplier"] = campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state_multiplier"]*geo_calc(technocapitalist-3,technocapitalist_dict[state]);
+				campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state_multiplier"] = campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state_multiplier"]+geo_calc(technocapitalist-3,technocapitalist_dict[state]);
 				//console.log(geo_calc(technocapitalist-3,technocapitalist_dict[state]));
 			}
 			//console.log(campaignTrail_temp.candidate_state_multiplier_json[n]["fields"]["state_multiplier"]);
@@ -11268,7 +11268,6 @@ campaignTrail_temp.jet_data = [{}
 ]
 
 
-campaignTrail_temp.multiple_endings = true;
 
 function setImage(url) {
 	if(url == '' || url == null) return;
@@ -11281,6 +11280,7 @@ function setImage(url) {
 	}, 50);
 }
 
+campaignTrail_temp.multiple_endings = true;
 current_slide = 0;
 slides = [];
 
@@ -11301,13 +11301,13 @@ next_slide = function() {
 }
 
 function add_slide(image, slide_content, first, last) {
-	if (!first) {
-		slide_content += `<button style='float:left;' onclick='prev_slide()'>Previous Page</button></div>`;
-	}
-	if (!last) {
-		slide_content += `<button style='float:left;'onclick='next_slide()'>Next Page</button></div>`;
-	}
 	if (!first && !last) {
+		slide_content += `<button style='float:left;' onclick='prev_slide()'>Previous Page</button><button style='float:left;'onclick='next_slide()'>Next Page</button></div>`;
+	} else if (first && !last) {
+		slide_content += `<button style='float:left;'onclick='next_slide()'>Next Page</button></div>`;
+	} else if (!first && last) {
+		slide_content += `<button style='float:left;' onclick='prev_slide()'>Previous Page</button></div>`;
+	} else {
 		slide_content += `</div>`;
 	}
 	slides.push([image, slide_content]);
