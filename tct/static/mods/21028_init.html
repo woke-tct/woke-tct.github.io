@@ -109,8 +109,8 @@ ach_list = {
 }
 
 function append_achievement(name, recursive) {
+	console.log("append achievement");
 	allAch["21028"][name]=ach_list[name];
-	addAllAchievements();
 	if (recursive == false) {
 		for (let n = 0; n<ach_list[name]["chained_achievements"].length; n++) {
 			append_achievement(ach_list[name]["chained_achievements"][n], true);
@@ -119,6 +119,7 @@ function append_achievement(name, recursive) {
 }
 
 function silent_unlock(name) {
+	console.log("silent unlock");
 	const ach = findAchievementByName(name);
 
 	if (ach == null) {
@@ -138,6 +139,7 @@ function silent_unlock(name) {
 
 for (let ach_name in allAch["21028"]) {
 	if (ach_list[ach_name] == null) {
+		console.log("purge ach name "+ach_name);
 		delete allAch["21028"][ach_name];
 	}
 }
@@ -149,7 +151,8 @@ if (localStorage["unlockedAch"] == null) { // This fixes a bug in case you have 
 	localStorage["unlockedAch"] = {};
 }
 for (let ach_name in ach_list) {
-	if (JSON.parse(localStorage["unlockedAch"])[ach_name] != null) {
+	console.log("for ach "+ach_name);
+	if (localStorage["unlockedAch"][ach_name] != null) {
 		append_achievement(ach_name);
 		silent_unlock(ach_name);
 		if (ach_list[ach_name]["chained_achievements"] != false) {
@@ -892,3 +895,5 @@ soundtracks = {
 // Set up new music player
 
 newMusicPlayer()
+
+addAllAchievements();
