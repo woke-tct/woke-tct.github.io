@@ -1101,7 +1101,7 @@ function divideElectoralVotesProp(e, t) {
           key: a,
           order: Math.random(),
         }),
-        4 != i.length));
+        6 != i.length));
       a++
     );
     P(i, "order");
@@ -1813,7 +1813,7 @@ function divideElectoralVotesProp(e, t) {
                       (i.answers_json[a].fields.question !=
                         i.questions_json[i.question_number].pk ||
                         (s.push({ key: a, order: Math.random() }),
-                        4 != s.length));
+                        6 != s.length));
                       a += 1
                     ) {}
                     P(s, "order");
@@ -1864,7 +1864,7 @@ function divideElectoralVotesProp(e, t) {
                     (i.answers_json[a].fields.question !=
                       i.questions_json[i.question_number].pk ||
                       (s.push({ key: a, order: Math.random() }),
-                      4 != s.length));
+                      6 != s.length));
                     a += 1
                   ) {}
                   P(s, "order");
@@ -1992,7 +1992,7 @@ function divideElectoralVotesProp(e, t) {
                 a < i.answers_json.length &&
                 (i.answers_json[a].fields.question !=
                   i.questions_json[i.question_number].pk ||
-                  (s.push({ key: a, order: Math.random() }), 4 != s.length));
+                  (s.push({ key: a, order: Math.random() }), 6 != s.length));
                 a += 1
               ) {}
               P(s, "order");
