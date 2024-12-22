@@ -1091,6 +1091,8 @@ function divideElectoralVotesProp(e, t) {
     return;
   };
 
+e.max_answers = 6;
+  
   const o = (t, e = campaignTrail_temp) => {
     for (
       var i = [], a = 0;
@@ -1101,7 +1103,7 @@ function divideElectoralVotesProp(e, t) {
           key: a,
           order: Math.random(),
         }),
-        6 != i.length));
+        e.max_answers != i.length));
       a++
     );
     P(i, "order");
