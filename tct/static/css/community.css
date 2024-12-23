@@ -177,11 +177,12 @@
   background-color: #f1f1f1;
   border: 1px solid #d3d3d3;
   text-align: center;
-  width: 50%;
+  width: 65%;
   height: auto;
   max-height: 50vh;
   overflow: hidden;
   padding-bottom: 5%;
+  resize: both;
 }
 
 #achwindowheader {
@@ -250,9 +251,9 @@
 
 .achBox {
   transition: all 0.2s ease-out;
-  height: 250px;
-  max-height: 250px;
-  max-width: 150px;
+  height: 260px;
+  max-height: 260px;
+  max-width: 220px;
   margin: 5%;
   display:flex;
   outline-color: #3d3b46;
@@ -308,7 +309,7 @@
 .achText {
   overflow-y: auto;
   overflow-x:hidden;
-  height: 10%;
+  height: 16%;
   font-size: 12px;
   border-radius: 5px;
   padding: 5px;
