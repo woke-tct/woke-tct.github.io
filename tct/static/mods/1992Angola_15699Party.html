@@ -31,7 +31,7 @@ cyoAdventure = function (a) {
     if(ans == 4449){
         unitedFront += 2;
     }
-    if(e.noCounter == 18 && unitedFront > 2){
+    if(unitedFront > 2){
        campaignTrail_temp.questions_json[18] = tunnel(16121);
     }
     if(e.noCounter == 19 && e.player_answers.includes(4413) && e.player_answers.includes(4417) && e.player_answers.includes(4458)){
@@ -5120,7 +5120,7 @@ campaignTrail_temp.jet_data = [{
 ]
 
 endingPicker = (out, totv, aa, quickstats) => {
-    if(quickstats[1] > 60){
+    if(quickstats[1] > 55){
         ctsAchievement("DEATH TO THE MPLA"); 
     }
     else if(out == "win" && contradictoryPositions > 1){
