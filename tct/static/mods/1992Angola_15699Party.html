@@ -8,15 +8,13 @@ function ctsAchievement(achievement, difficultyChecker = true){
 		unlockAchievement(achievement);
 	}
 }
-
+var unitedFront = 0;
 campaignTrail_temp.cyoa = true;
 	e = campaignTrail_temp
 	
 	function tunnel(new_q){
 		return e.questions_json[e.questions_json.map(f=>f.pk).indexOf(new_q)];
 	}
-
-    var unitedFront = 0;
     var contradictoryPositions = 0;
 cyoAdventure = function (a) {
     ans = campaignTrail_temp.player_answers[campaignTrail_temp.player_answers.length-1];
