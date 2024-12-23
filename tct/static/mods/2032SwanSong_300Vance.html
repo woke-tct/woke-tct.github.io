@@ -14,6 +14,8 @@ image_dict = {
 	"mike lee": "https://i.imgur.com/MMJ93Wz.png",
 }
 
+e.max_answers = 2;
+
 const box = document.createElement('div');
 box.id = 'draggable-box';
 const boxtext = document.createElement('p');
@@ -272,7 +274,7 @@ populist_dict = {
 
 function geo_calc(num,mult) {
 	if (num >= 0) {
-		return mult*0.08*(1-Math.pow(0.8, num))/0.2;
+		return mult*0.05*(1-Math.pow(0.8, num))/0.2;
 	} else {
 		return 0-mult*0.05*(1-Math.pow(1.2, -num))/-0.2;
 	}
@@ -601,11 +603,11 @@ cyoAdventure = function (a) {
 	old_darwinist = darwinist;
 	
 	if (difficulty == "easy") {
-		adjust_support(0.002)
+		adjust_support(0.0015)
 	} else if (difficulty == "medium") {
 		adjust_support(0.0005)
 	} else if (difficulty == "hard") {
-		adjust_support(-0.0015)
+		adjust_support(-0.0005)
 	}
 	
 	if (opinion_shift == "traditionalist") {
@@ -622,35 +624,35 @@ cyoAdventure = function (a) {
 		expectation += 0.15;
 		console.log(expectation);
 	}
-	if (e.question_number+2 == 10) {
+	if (e.questions_json[e.question_number+1].pk == "question_10") {
 		campaignTrail_temp.candidate_last_name = "The";
 		campaignTrail_temp.running_mate_last_name = "Movement";
 		campaignTrail_temp.candidate_image_url = image_dict["the movement"];
 		campaignTrail_temp.running_mate_image_url = image_dict["the movement"];
 		setTimeout(dark_movement_theme, 10);
 	}
-	if (e.question_number+2 == 11) {
+	if (e.questions_json[e.question_number+1].pk == "question_11") {
 		campaignTrail_temp.candidate_last_name = "Movement";
 		campaignTrail_temp.running_mate_last_name = "Vance";
 		campaignTrail_temp.candidate_image_url = image_dict["the movement"];
 		campaignTrail_temp.running_mate_image_url = image_dict["vance"];
 		setTimeout(movement_theme, 10);
 	}
-	if (e.question_number+2 == 26) {
+	if (e.questions_json[e.question_number+1].pk == "question_26") {
 		campaignTrail_temp.candidate_last_name = 'The Regime';
 		campaignTrail_temp.running_mate_last_name = ' ';
 		campaignTrail_temp.candidate_image_url = image_dict["the regime"];
 		campaignTrail_temp.running_mate_image_url = image_dict["nwo"];
 		setTimeout(regime_theme, 10);
 	}
-	if (e.question_number+2 == 27) {
+	if (e.questions_json[e.question_number+1].pk == "question_27") {
 		campaignTrail_temp.candidate_last_name = "The";
 		campaignTrail_temp.running_mate_last_name = "Movement";
 		campaignTrail_temp.candidate_image_url = image_dict["the movement"];
 		campaignTrail_temp.running_mate_image_url = image_dict["the movement"];
 		setTimeout(dark_movement_theme, 10);
 	}
-	if (e.question_number+2 == 28) {
+	if (e.questions_json[e.question_number+1].pk == "question_28") {
 		campaignTrail_temp.candidate_last_name = movement_candidate;
 		campaignTrail_temp.running_mate_last_name = movement_running_mate;
 		campaignTrail_temp.candidate_image_url = movement_candidate_url;
@@ -787,6 +789,7 @@ cyoAdventure = function (a) {
 	if (ans == 130003) {
 		populist += 1;
 		christian += 1;
+		darwinist -= 1;
 	}
 	if (ans == 160001) {
 		populist += 1;
@@ -1037,6 +1040,17 @@ campaignTrail_temp.questions_json = [
             "likelihood": 1
         }
     },
+	
+	{
+        "model": "campaign_trail.question",
+        "pk": "patch_question_1",
+        "fields": {
+            "priority": 0,
+            "description": "You've been briefed that there is a sea of groups, unaligned with you or the Regime. “Swing voters” you could call them, ones you could potentially win over. But your campaign will likely only be successful with one of them, which ones, if any do you pursue?",
+            "likelihood": 1
+        }
+    },
+	
 	{
         "model": "campaign_trail.question",
         "pk": "question_11",
@@ -1060,7 +1074,7 @@ campaignTrail_temp.questions_json = [
         "pk": "question_13",
         "fields": {
             "priority": 0,
-            "description": "It doesn’t end there. Swarms of DNC bots, operated out of 3rd World countries have begun swarming the internet. They’re everywhere, making posts and trying to steer the conversation. For the Movement’s natural affinity for the web, they don’t have an effective way to counter this. How do you respond?",
+            "description": "It doesn’t end there. Swarms of DNC bots, operated out of 3rd World countries have begun swarming the internet. They’re everywhere, astroturfing support and trying to steer the conversation. For the Movement’s natural affinity for the web, they don’t have an effective way to counter this. How do you respond?",
             "likelihood": 1
         }
     },
@@ -1680,6 +1694,38 @@ campaignTrail_temp.answers_json = [
     },
 	{
         "model": "campaign_trail.answer",
+        "pk": 105001,
+        "fields": {
+            "question": `patch_question_1`,
+            "description": `Moderates and the people of Suburbia. They’ve been the swing demographic for generations, and we can’t just let them slip through our fingers. We’ve been in power for 8 years now, we’re not going to rock the boat. They might be turned off by Trump, but I’m not Trump.`
+        }
+    },
+	{
+        "model": "campaign_trail.answer",
+        "pk": 105002,
+        "fields": {
+            "question": `patch_question_1`,
+            "description": `I don’t think it’s any coincidence we have so many ex-Bernie supporters in the coalition, God rest his soul. This isn’t left versus right, it’s the people versus the establishment. The populists of the left are our allies too. Together, we can dismantle the corporate machine.`
+        }
+    },
+	{
+        "model": "campaign_trail.answer",
+        "pk": 105003,
+        "fields": {
+            "question": `patch_question_1`,
+            "description": `It’s time to reunite the right. Too many neoconservatives have gone astray into the clutches of the Regime. It’s time to put aside the differences between the Old Right and New Right. It’s a dangerous world out there, and America needs to be the shining beacon upon the world once again.`
+        }
+    },
+	{
+        "model": "campaign_trail.answer",
+        "pk": 105004,
+        "fields": {
+            "question": `patch_question_1`,
+            "description": `Our coalition is fine. Inviting these new members in might destabilize an already fragile balance between our factions. Let's not overcomplicate something that is already complicated.`
+        }
+    },
+	{
+        "model": "campaign_trail.answer",
         "pk": 110001,
         "fields": {
             "question": `question_11`,
@@ -1830,6 +1876,32 @@ campaignTrail_temp.answers_json = [
             "description": `I am proud to announce my new running mate Mike Lee, a great man, and a strict constitutionalist from the state of Utah. Lee has done everything to oppose increases in federal power and is dedicated to gutting our bloated bureaucracy. And with him, we’re going to get the government the hell of your lives.`
         }
     },
+	
+	{
+        "model": "campaign_trail.answer",
+        "pk": 160005,
+        "fields": {
+            "question": `hidden`,
+            "description": `I am proud to announce my new running mate Robert F. Kennedy Jr., a great man, and a great bipartisan activist from the state of California. Kennedy has spent his entire life standing up to corporate overreach and corruption. And with him, we’re going to expose the lies, hold the powerful accountable, and restore integrity to Washington.`
+        }
+    },
+	{
+        "model": "campaign_trail.answer",
+        "pk": 160006,
+        "fields": {
+            "question": `hidden`,
+            "description": `I am proud to announce my new running mate Lee Zeldin, a great man, and a great politician from the state of New York. Zeldin has dedictaed his entire life as a public servant. And with him, we're going to install sane and pragmatic leadership to Washington.`
+        }
+    },
+	{
+        "model": "campaign_trail.answer",
+        "pk": 160007,
+        "fields": {
+            "question": `hidden`,
+            "description": `I am proud to announce my new running mate Nikki Haley, a great woman, and a great American warrior from the state of South Carolina. Haley has been an outspoken fighter against our enemies, domestic and abroad. And with her, we're going to re-unite the right at last.`
+        }
+    },
+	
 	{
         "model": "campaign_trail.answer",
         "pk": 170011,
@@ -2132,6 +2204,22 @@ campaignTrail_temp.answers_json = [
         "fields": {
             "question": `question_26`,
             "description": `Let the cities burn.`
+        }
+    },
+	{
+        "model": "campaign_trail.answer",
+        "pk": 260002,
+        "fields": {
+            "question": `question_26`,
+            "description": `We cannot capitalize on this at the moment. Let his name die in obscurity.`
+        }
+    },
+	{
+        "model": "campaign_trail.answer",
+        "pk": 260003,
+        "fields": {
+            "question": `question_26`,
+            "description": `An outrage. But a useful one. Let the streets ring out his name.`
         }
     },
 	{
@@ -2788,6 +2876,42 @@ campaignTrail_temp.answer_feedback_json = [
             "answer": 120004,
             "candidate": 300,
             "answer_feedback": "The left hears nothing, but the right has been kicked up into a frenzy. Even as a stream of bans continues to trickle in. By the end of it, the Movement has been curbed, but the outrage doesn’t die down. Not just at the Regime, but at you, and why you didn’t do anything about it."
+        }
+    },
+	{
+        "model": "campaign_trail.answer_feedback",
+        "pk": "",
+        "fields": {
+            "answer": 105001,
+            "candidate": 300,
+            "answer_feedback": "This costs you some points with the more rural Darwinists, who prefer rugged competition rather than sheltered safety. Many suburbanites had been scared away from the Movement by the antics of Trump. Let’s see if you can win them back."
+        }
+    },
+	{
+        "model": "campaign_trail.answer_feedback",
+        "pk": "",
+        "fields": {
+            "answer": 105002,
+            "candidate": 300,
+            "answer_feedback": "This increases tension with the Technocapitalist camp, who are uneasy inviting more leftist factions into the coalition. But it is true that many of the Populist faction arrived through the pipeline of Bernie. Maybe for his memory, you can finish what he started."
+        }
+    },
+	{
+        "model": "campaign_trail.answer_feedback",
+        "pk": "",
+        "fields": {
+            "answer": 105003,
+            "candidate": 300,
+            "answer_feedback": "The Populists don’t trust the old establishment, which they derisively call “RINOs”. But even the staunchest Never-Vance’ers can see the increasing fragility of the Regime’s situation. Like rats jumping off a sinking ship, they hope to find a place in Movement."
+        }
+    },
+	{
+        "model": "campaign_trail.answer_feedback",
+        "pk": "",
+        "fields": {
+            "answer": 105004,
+            "candidate": 300,
+            "answer_feedback": "Fair enough."
         }
     },
 	{
@@ -11535,17 +11659,17 @@ endingPicker = (out, totv, aa, quickstats) => {
 		add_slide(ending_image_dict["eugenics"],slide_dict["eugenics"], false, true);
 	} else if (faction_win == "darwinist") {
 		add_slide(ending_image_dict["jstark"],slide_dict["jstark"], false, true);
-	} else if (faction_win == "christian+populist") {
+	} else if (faction_win == "christian+populist" || faction_win == "populist+christian") {
 		add_slide(ending_image_dict["trump_funeral"],slide_dict["trump_funeral"], false, true);
-	} else if (faction_win == "christian+technocapitalist") {
+	} else if (faction_win == "christian+technocapitalist" || faction_win == "technocapitalist+christian") {
 		add_slide(ending_image_dict["kevin"],slide_dict["kevin"], false, true);
-	} else if (faction_win == "christian+darwinist") {
+	} else if (faction_win == "christian+darwinist" || faction_win == "darwinist+christian") {
 		add_slide(ending_image_dict["israel"],slide_dict["israel"], false, true);
-	} else if (faction_win == "populist+technocapitalist") {
+	} else if (faction_win == "populist+technocapitalist" || faction_win == "technocapitalist+populist") {
 		add_slide(ending_image_dict["seastead"],slide_dict["seastead"], false, true);
-	} else if (faction_win == "populist+darwinist") {
+	} else if (faction_win == "populist+darwinist" || faction_win == "darwinist+populist") {
 		add_slide(ending_image_dict["pmc"],slide_dict["pmc"], false, true);
-	} else if (faction_win == "technocapitalist+darwinist") {
+	} else if (faction_win == "technocapitalist+darwinist" || faction_win == "darwinist+technocapitalist") {
 		add_slide(ending_image_dict["malcolm"],slide_dict["malcolm"], false, true);
 	} else if (faction_win == "balanced") {
 		add_slide(ending_image_dict["the_road_ahead"],slide_dict["the_road_ahead"], false, true);
