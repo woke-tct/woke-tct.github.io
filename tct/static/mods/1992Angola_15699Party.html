@@ -5123,10 +5123,10 @@ endingPicker = (out, totv, aa, quickstats) => {
     if(quickstats[1] > 55){
         ctsAchievement("DEATH TO THE MPLA"); 
     }
-    else if(out == "win" && contradictoryPositions > 1){
+    if(out == "win" && contradictoryPositions > 1){
         ctsAchievement("Contradictions of Savimbi"); 
     }
-    else if (out == "win" && unitedFront > 2){
+    if (out == "win" && unitedFront > 2){
         ctsAchievement("UNINLA"); 
     }
     else if (out == "loss" && unitedFront > 2){
