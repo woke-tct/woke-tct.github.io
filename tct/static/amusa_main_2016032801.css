@@ -928,7 +928,8 @@ h2.headline_pretty {
 .inner_inner_window {
 	background: none;
 	margin: 0;
-	height: 85%
+	height: 85%;
+	z-index: 1;
 }
 
 #question_form {
