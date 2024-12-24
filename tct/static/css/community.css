@@ -309,10 +309,10 @@
 .achText {
   overflow-y: auto;
   overflow-x:hidden;
-  height: 16%;
+  height: 11%;
   font-size: 12px;
   border-radius: 5px;
-  padding: 5px;
+  padding: 1px;
 }
 
 .locked {
