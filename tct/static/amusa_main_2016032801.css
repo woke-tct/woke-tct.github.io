@@ -937,7 +937,6 @@ h2.headline_pretty {
 	line-height: 1.5em;
 	font-size: 1.05em;
 	height: 72%;
-    overflow-y: auto;
     width: 98%;
 }
 
