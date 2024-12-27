@@ -377,10 +377,7 @@ function updateDynamicStyle() {
 
 // Update banner, styling, and game header on interval
 setInterval(function () {
-  if(nct_stuff.ignoreCorrFunction){
-    return;
-  }
-  else if (
+  if (
     JSON.stringify(nct_stuff.custom_override) !=
       JSON.stringify(selectedTheme) &&
     !nct_stuff.dynamicOverride &&
@@ -408,7 +405,7 @@ setInterval(function () {
   updateDynamicStyle();
 
   //updateGameHeaderContentAndStyling();
-}, 100);
+}, 75);
 
 async function loadJSON(path, varr, callback = null) {
   const res = await fetch(path);
