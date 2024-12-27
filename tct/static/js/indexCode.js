@@ -173,6 +173,7 @@ function choose(choices) {
 
 nct_stuff = {};
 nct_stuff.dynamicOverride = false;
+nct_stuff.ignoreCorr = false;
 nct_stuff.themes = {
   tct: {
     name: "OpenTCT",
