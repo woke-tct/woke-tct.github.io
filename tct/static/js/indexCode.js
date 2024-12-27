@@ -398,9 +398,12 @@ setInterval(function () {
     selectedTheme.window_url = null;
   }
   let gameHeader = $(".game_header")[0];
-  if (gameHeader.innerHTML != corrr) {
+  if(gameHeader.innerHTML != corrr && !ignoreCorr){
     gameHeader.innerHTML = corrr;
   }
+  else{
+  }
+
   gameHeader.style.backgroundColor = selectedTheme.coloring_title;
   updateDynamicStyle();
 
