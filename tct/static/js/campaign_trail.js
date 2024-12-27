@@ -2218,9 +2218,6 @@ e.max_answers = 6;
         if (answers.length > 3){
           document.styleSheets[0].insertRule("#question_form { overflow-y: auto; }");
         }
-        else if(answers.length <= 3){
-          document.styleSheets[0].insertRule("#question_form { overflow-y: visible; }");
-        }
         answer.classList.add("dd");
     }
 } 
