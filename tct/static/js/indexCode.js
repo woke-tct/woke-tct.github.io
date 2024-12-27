@@ -377,7 +377,10 @@ function updateDynamicStyle() {
 
 // Update banner, styling, and game header on interval
 setInterval(function () {
-  if (
+  if(nct_stuff.ignoreCorrFunction){
+    return;
+  }
+  else if (
     JSON.stringify(nct_stuff.custom_override) !=
       JSON.stringify(selectedTheme) &&
     !nct_stuff.dynamicOverride &&
