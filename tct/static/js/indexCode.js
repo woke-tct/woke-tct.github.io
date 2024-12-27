@@ -399,7 +399,7 @@ setInterval(function () {
     selectedTheme.window_url = null;
   }
   let gameHeader = $(".game_header")[0];
-  if(gameHeader.innerHTML != corrr && !inct_stuff.ignoreCorr){
+  if(gameHeader.innerHTML != corrr && !nct_stuff.ignoreCorr){
     gameHeader.innerHTML = corrr;
   }
   else{
