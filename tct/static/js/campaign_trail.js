@@ -2206,23 +2206,6 @@ e.max_answers = 6;
       importgame(e.dagakotowaru);
     }
   }
-  let awn = document.getElementById("game_window");
-  let qconf = { attributes: true, childList: true, subtree: true };
-  function answerLengthIndexCalculator(mutationList, observer) {
-    const answers = document.getElementsByClassName("game_answers");
-    for (let i = 0; i < answers.length; i++) {
-        const answer = answers[i];
-        if (answer.classList.contains("dd")) {
-            continue;
-        }
-        if (answers.length > 3){
-          document.styleSheets[0].insertRule("#question_form { overflow-y: auto; }");
-        }
-        answer.classList.add("dd");
-    }
-} 
-const scCreate = new MutationObserver(answerLengthIndexCalculator);
-scCreate.observe(awn, qconf);//opentct
   function n(t) {
     const stopSpacebar = false;
     if (stopSpacebar && $("#visit_overlay")[0]) {

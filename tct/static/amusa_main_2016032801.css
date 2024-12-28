@@ -938,6 +938,7 @@ h2.headline_pretty {
 	font-size: 1.05em;
 	height: 72%;
     width: 98%;
+	overflow-y: auto;
 }
 
 #question_form label:hover {
