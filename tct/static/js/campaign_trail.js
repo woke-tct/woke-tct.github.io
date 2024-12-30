@@ -2214,7 +2214,11 @@ e.max_answers = 6;
     }
 
     debugConsole("Applying answer effects for answer pk " + t);
-    e.player_answers.push(Number(t));
+    if (isNaN(Number(t))) {
+        e.player_answers.push(t);
+    } else {
+        e.player_answers.push(Number(t));
+    }
     var i = 0,
       a = S(e.election_id);
     if (1 == e.answer_feedback_flg) {
