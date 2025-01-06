@@ -14,6 +14,156 @@ campaignTrail_temp.achievements = {
 		"cannotBeCheated" : false,
 	},
 }
+
+ach_list = {
+	"Everywhere at the End of Time" : {
+		"image" : "https://i.imgur.com/2K4r2lL.png",
+		"description" : "Finish the game.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : false,
+	},
+	"Hello World!" : {
+		"image" : "https://i.imgur.com/QGAPHrP.png",
+		"description" : "Be introduced to Sarah Webster.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : false,
+	},
+	"Pillow God" : {
+		"image" : "https://i.imgur.com/Rbbw6JQ.png",
+		"description" : "(Shadow Achievement) Appease the pillow god.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : false,
+	},
+	"Loudmouth Businessman" : {
+		"image" : "https://i.imgur.com/3I3CM9n.png",
+		"description" : "Face off against Luca Perez.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : ["Loudmouth Businessman", "Stodgy Old Evangelical", "Soul Singer", "Quiet Bureaucrat", "Hopeful Humanitarian", "Enigmatic Traveller"],
+	},
+	"Stodgy Old Evangelical" : {
+		"image" : "https://i.imgur.com/pZ30TgD.png",
+		"description" : "Face off against Robert T. Edwards.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : ["Loudmouth Businessman", "Stodgy Old Evangelical", "Soul Singer", "Quiet Bureaucrat", "Hopeful Humanitarian", "Enigmatic Traveller"],
+	},
+	"Soul Singer" : {
+		"image" : "https://i.imgur.com/YDBGebA.png",
+		"description" : "Face off against John King.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : ["Loudmouth Businessman", "Stodgy Old Evangelical", "Soul Singer", "Quiet Bureaucrat", "Hopeful Humanitarian", "Enigmatic Traveller"],
+	},
+	"Quiet Bureaucrat" : {
+		"image" : "https://i.imgur.com/aSiL684.png",
+		"description" : "Face off against Tim Jacobs.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : ["Loudmouth Businessman", "Stodgy Old Evangelical", "Soul Singer", "Quiet Bureaucrat", "Hopeful Humanitarian", "Enigmatic Traveller"],
+	},
+	"Hopeful Humanitarian" : {
+		"image" : "https://i.imgur.com/3zSV8nl.png",
+		"description" : "Face off against Emilia Kelly.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : ["Loudmouth Businessman", "Stodgy Old Evangelical", "Soul Singer", "Quiet Bureaucrat", "Hopeful Humanitarian", "Enigmatic Traveller"],
+	},
+	"Enigmatic Traveller" : {
+		"image" : "https://i.imgur.com/QrJeBZg.png",
+		"description" : "Face off against Elizabeth Haley.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : ["Loudmouth Businessman", "Stodgy Old Evangelical", "Soul Singer", "Quiet Bureaucrat", "Hopeful Humanitarian", "Enigmatic Traveller"],
+	},
+	"Seam 1" : {
+		"image" : "https://i.imgur.com/aDo04Tu.png",
+		"description" : "Find a seam in reality.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : false,
+	},
+	"Seam 2" : {
+		"image" : "https://i.imgur.com/9wMz7d5.png",
+		"description" : "Find a seam in reality.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : false,
+	},
+	"Seam 3" : {
+		"image" : "https://i.imgur.com/inlkPKL.png",
+		"description" : "Find a seam in reality.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : false,
+	},
+	"Seam 4" : {
+		"image" : "https://i.imgur.com/pzPhMFi.png",
+		"description" : "Find a seam in reality.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : false,
+	},
+	"Seam 5" : {
+		"image" : "https://i.imgur.com/Wznk9yt.png",
+		"description" : "Find a seam in reality.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : false,
+	},
+	"Seam 6" : {
+		"image" : "https://i.imgur.com/r1cNHZT.png",
+		"description" : "Find a seam in reality.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : false,
+	},
+}
+
+function append_achievement(name, recursive) {
+	console.log("append achievement");
+	allAch["21028"][name]=ach_list[name];
+	if (recursive == false) {
+		for (let n = 0; n<ach_list[name]["chained_achievements"].length; n++) {
+			append_achievement(ach_list[name]["chained_achievements"][n], true);
+		}
+	}
+}
+
+function silent_unlock(name) {
+	console.log("silent unlock");
+	const ach = findAchievementByName(name);
+
+	if (ach == null) {
+	console.log("There is no achievement with the name '" + name + "'");
+	return;
+	}
+
+	if (cheatsActive && ach.cannotBeCheated) {
+	console.log(`Would unlock '${name}' but won't because cheating!`);
+	return;
+	}
+
+	unlockedAch[name] = ach;
+	localStorage.setItem("unlockedAch", JSON.stringify(unlockedAch));
+	addAllAchievements();
+	console.log("Try Silent Unlock");
+}
+
+for (let ach_name in allAch["21028"]) {
+	if (ach_list[ach_name] == null) {
+		console.log("purge ach name "+ach_name);
+		delete allAch["21028"][ach_name];
+	}
+}
+
+// Set up all the achievements.
+campaignTrail_temp.achievements = {}
+append_achievement("Everywhere at the End of Time");
+if (localStorage["unlockedAch"] == null) { // This fixes a bug in case you have zero unlocked achievements so far.
+	localStorage["unlockedAch"] = {};
+}
+for (let ach_name in ach_list) {
+	console.log("for ach "+ach_name);
+	if (localStorage["unlockedAch"][ach_name] != null) {
+		append_achievement(ach_name);
+		silent_unlock(ach_name);
+		if (ach_list[ach_name]["chained_achievements"] != false) {
+			for (let n = 0; n<ach_list[ach_name]["chained_achievements"].length; n++) {
+				append_achievement(ach_list[ach_name]["chained_achievements"][n]);
+			}
+		}
+	}
+}
+
 campaignTrail_temp.modBoxTheme = {
   "header_color": "#444444",
   "header_text_color": "#ffffff",
@@ -746,3 +896,6 @@ soundtracks = {
 // Set up new music player
 
 newMusicPlayer()
+
+console.log("Got here.");
+addAllAchievements();
