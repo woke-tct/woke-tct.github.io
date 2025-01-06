@@ -160,7 +160,7 @@ cyoAdventure = function (a) {
 		change_soundtrack(1);
 	}
 	if (e.question_number+1 == 14) {
-		setTimeout(dark_earth_theme,10);
+		setTimeout(dark_earth_theme,0);
 	}
 	if (ans == 10005) {
 		breakreality += 1;
@@ -176,7 +176,7 @@ cyoAdventure = function (a) {
 	}
 	if (ans == 30001) {
 		corrr = '<h2>THE CAMPAIGN TRAIL</h2><font id="wittyquote" size="4" color="white"><em>Part 1: The First Campaign</em></font>';
-		setTimeout(earth_theme,10);
+		setTimeout(earth_theme,0);
 		change_soundtrack(2);
 		fakevpscreen("gray");
 	}
@@ -308,16 +308,16 @@ cyoAdventure = function (a) {
 	if (ans == 80001) {
 		adjust_support(0.02);
 		optimal_answers += 1;
-		setTimeout(earth_theme,10);
+		setTimeout(earth_theme,0);
 	}
 	if (ans == 80002) {
-		setTimeout(earth_theme,10);
+		setTimeout(earth_theme,0);
 	}
 	if (ans == 80003) {
-		setTimeout(earth_theme,10);
+		setTimeout(earth_theme,0);
 	}
 	if (ans == 80004) {
-		setTimeout(earth_theme,10);
+		setTimeout(earth_theme,0);
 	}
 	if (ans == 80005) {
 		breakreality += 1;
@@ -352,7 +352,7 @@ cyoAdventure = function (a) {
 	}
 	if (ans == 110001) {
 		imageslide("https://i.imgur.com/1aX8UTt.png", true, "earth");
-		setTimeout(dark_earth_theme,10);
+		setTimeout(dark_earth_theme,0);
 	}
 	if (ans == 110003) {
 		optimal_answers += 1;
@@ -373,7 +373,7 @@ cyoAdventure = function (a) {
 	}
 	if (ans == 120003) {
 		imageslide("https://i.imgur.com/J4aHtyW.png", false, "earth");
-		setTimeout(dark_earth_theme,10);
+		setTimeout(dark_earth_theme,0);
 	}
 	if (ans == 120004) {
 		imageslide("https://i.imgur.com/eu2hLPI.png", false);
@@ -389,7 +389,7 @@ cyoAdventure = function (a) {
 	}
 	if (ans == 130001) {
 		imageslide("https://i.ibb.co/d0MdtnT/image.png", true, "earth");
-		setTimeout(dark_earth_theme,10);
+		setTimeout(dark_earth_theme,0);
 	}
 	if (ans == 140002) {
 		optimal_answers += 1;
@@ -403,7 +403,7 @@ cyoAdventure = function (a) {
 	if (ans == 170001) {
 		end_the_game = 1;
 		e.questions_json[getQuestionNumberFromPk("question18")]=getQuestion("ignorant_bliss");
-		setTimeout(earth_theme,10);
+		setTimeout(earth_theme,0);
 		campaignTrail_temp.election_json[0].fields.advisor_url = advisor_image["sarah_mark"];
 		update_EV_dict();
 		if (return_highest("ev") == 300) {
@@ -581,7 +581,7 @@ cyoAdventure = function (a) {
 	}
 	if (ans == 230004) {
 		campaignTrail_temp.questions_json[24]=getQuestion("resign");
-		setTimeout(dark_earth_theme,10);
+		setTimeout(dark_earth_theme,0);
 		end_the_game = 1;
 		campaignTrail_temp.election_json[0].fields.advisor_url = advisor_image["sarah_mark"];
 		ending = "stargazing";
@@ -736,7 +736,7 @@ cyoAdventure = function (a) {
 		campaignTrail_temp.election_json[0].fields.advisor_url = advisor_image["sarah_mark"];
 	}
 	if (ans == 340008) {
-		setTimeout(stargazing_theme,10);
+		setTimeout(stargazing_theme,0);
 		imageslide("https://i.imgur.com/EgycIr3.png",false);
 		set_support(0);
 	}
@@ -783,7 +783,7 @@ cyoAdventure = function (a) {
 	}
 	if (ans == 1990001) {
 		imageslide("https://i.ibb.co/XxfJ3Yk/image.png",true, "earth");
-		setTimeout(dark_earth_theme,10);
+		setTimeout(dark_earth_theme,0);
 	}
 	// Intermission, Part 2 begins.
 	if (ans == 371002) {
@@ -865,7 +865,7 @@ cyoAdventure = function (a) {
 		campaignTrail_temp.candidate_json[1]["fields"]["last_name"] = "New World Democrats";
 	}
 	if (ans == 410001) {
-		setTimeout(congress_theme,10);
+		setTimeout(congress_theme,0);
 		congress_relations = 0;
 		militarization = 0;
 		willing_change = 3;
