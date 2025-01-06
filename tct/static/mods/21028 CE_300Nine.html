@@ -28,8 +28,157 @@ religious_subalignment = 0;
 question5_phase = 0;
 e.max_answers = 4;
 
+ach_list = {
+	"Everywhere at the End of Time" : {
+		"image" : "https://i.imgur.com/2K4r2lL.png",
+		"description" : "Finish the game.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : false,
+	},
+	"Hello World!" : {
+		"image" : "https://i.imgur.com/QGAPHrP.png",
+		"description" : "Be introduced to Sarah Webster.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : false,
+	},
+	"Pillow God" : {
+		"image" : "https://i.imgur.com/Rbbw6JQ.png",
+		"description" : "(Shadow Achievement) Appease the pillow god.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : false,
+	},
+	"Loudmouth Businessman" : {
+		"image" : "https://i.imgur.com/3I3CM9n.png",
+		"description" : "Face off against Luca Perez.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : ["Loudmouth Businessman", "Stodgy Old Evangelical", "Soul Singer", "Quiet Bureaucrat", "Hopeful Humanitarian", "Enigmatic Traveller"],
+	},
+	"Stodgy Old Evangelical" : {
+		"image" : "https://i.imgur.com/pZ30TgD.png",
+		"description" : "Face off against Robert T. Edwards.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : ["Loudmouth Businessman", "Stodgy Old Evangelical", "Soul Singer", "Quiet Bureaucrat", "Hopeful Humanitarian", "Enigmatic Traveller"],
+	},
+	"Soul Singer" : {
+		"image" : "https://i.imgur.com/YDBGebA.png",
+		"description" : "Face off against John King.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : ["Loudmouth Businessman", "Stodgy Old Evangelical", "Soul Singer", "Quiet Bureaucrat", "Hopeful Humanitarian", "Enigmatic Traveller"],
+	},
+	"Quiet Bureaucrat" : {
+		"image" : "https://i.imgur.com/aSiL684.png",
+		"description" : "Face off against Tim Jacobs.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : ["Loudmouth Businessman", "Stodgy Old Evangelical", "Soul Singer", "Quiet Bureaucrat", "Hopeful Humanitarian", "Enigmatic Traveller"],
+	},
+	"Hopeful Humanitarian" : {
+		"image" : "https://i.imgur.com/3zSV8nl.png",
+		"description" : "Face off against Emilia Kelly.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : ["Loudmouth Businessman", "Stodgy Old Evangelical", "Soul Singer", "Quiet Bureaucrat", "Hopeful Humanitarian", "Enigmatic Traveller"],
+	},
+	"Enigmatic Traveller" : {
+		"image" : "https://i.imgur.com/QrJeBZg.png",
+		"description" : "Face off against Elizabeth Haley.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : ["Loudmouth Businessman", "Stodgy Old Evangelical", "Soul Singer", "Quiet Bureaucrat", "Hopeful Humanitarian", "Enigmatic Traveller"],
+	},
+	"Seam 1" : {
+		"image" : "https://i.imgur.com/aDo04Tu.png",
+		"description" : "Find a seam in reality.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : false,
+	},
+	"Seam 2" : {
+		"image" : "https://i.imgur.com/9wMz7d5.png",
+		"description" : "Find a seam in reality.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : false,
+	},
+	"Seam 3" : {
+		"image" : "https://i.imgur.com/inlkPKL.png",
+		"description" : "Find a seam in reality.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : false,
+	},
+	"Seam 4" : {
+		"image" : "https://i.imgur.com/pzPhMFi.png",
+		"description" : "Find a seam in reality.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : false,
+	},
+	"Seam 5" : {
+		"image" : "https://i.imgur.com/Wznk9yt.png",
+		"description" : "Find a seam in reality.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : false,
+	},
+	"Seam 6" : {
+		"image" : "https://i.imgur.com/r1cNHZT.png",
+		"description" : "Find a seam in reality.",
+		"cannotBeCheated" : false,
+		"chained_achievements" : false,
+	},
+}
+
+function append_achievement(name, recursive) {
+	console.log("append achievement");
+	allAch["21028"][name]=ach_list[name];
+	if (recursive == false) {
+		for (let n = 0; n<ach_list[name]["chained_achievements"].length; n++) {
+			append_achievement(ach_list[name]["chained_achievements"][n], true);
+		}
+	}
+}
+
+function silent_unlock(name) {
+	console.log("silent unlock");
+	const ach = findAchievementByName(name);
+
+	if (ach == null) {
+	console.log("There is no achievement with the name '" + name + "'");
+	return;
+	}
+
+	if (cheatsActive && ach.cannotBeCheated) {
+	console.log(`Would unlock '${name}' but won't because cheating!`);
+	return;
+	}
+	achContent = ''; // This doesn't do anything, just helps avoid some errors down the road.
+	unlockedAch[name] = ach;
+	localStorage.setItem("unlockedAch", JSON.stringify(unlockedAch));
+	addAllAchievements();
+}
+
+for (let ach_name in allAch["21028"]) {
+	if (ach_list[ach_name] == null) {
+		console.log("purge ach name "+ach_name);
+		delete allAch["21028"][ach_name];
+	}
+}
+
+// Set up all the achievements.
+campaignTrail_temp.achievements = {}
+append_achievement("Everywhere at the End of Time");
+if (localStorage["unlockedAch"] == null) { // This fixes a bug in case you have zero unlocked achievements so far.
+	localStorage["unlockedAch"] = {};
+}
+for (let ach_name in ach_list) {
+	console.log("for ach "+ach_name);
+	if (localStorage["unlockedAch"][ach_name] != null) {
+		append_achievement(ach_name);
+		silent_unlock(ach_name);
+		if (ach_list[ach_name]["chained_achievements"] != false) {
+			for (let n = 0; n<ach_list[ach_name]["chained_achievements"].length; n++) {
+				append_achievement(ach_list[ach_name]["chained_achievements"][n]);
+			}
+		}
+	}
+}
+
+addAllAchievements();
+
 cyoAdventure = function (a) {
-	e.max_answers = 4;
 	/*
 	console.log("Worldly Conflict: "+checkstats("worldly_conflict"));
 	console.log("Militarization: "+checkstats("militarization"));
@@ -438,11 +587,13 @@ cyoAdventure = function (a) {
 	if (ans == 200001) {
 		apply_effect(issue_dict["worldly_conflict"], -1, 0.08);
 		alignment = "old world";
+		set_candidate_score(300, -0.7, "null", "null", "null", "null");
 		e.questions_json[getQuestionNumberFromPk("question28")]=getQuestion("worldly_question ow");
 	}
 	if (ans == 200002) {
 		apply_effect(issue_dict["worldly_conflict"], 1, 0.08);
 		alignment = "new world";
+		set_candidate_score(300, 0.7, "null", "null", "null", "null");
 		e.questions_json[getQuestionNumberFromPk("question28")]=getQuestion("worldly_question nw");
 	}
 	if (ans == 200003) {
@@ -4683,7 +4834,15 @@ campaignTrail_temp.answers_json = [
         "pk": 333002,
         "fields": {
             "question": "endorsement secular",
-            "description": "Jacobs. Like look, he clearly knows what he’s doing, and he’s pretty smart. If nothing else, he would help us prepare for First Contact and look at the statistics better than anyone else. If it comes down to a strategic votes, then go with Jacobs.",
+            "description": "King, even if I disagree with him on a few minor issues, I can’t deny the man has a good heart. If I can’t be the one to cross that finish line at the very end, then let’s at least give his music career the greatest send off of them all.",
+        }
+    },
+	{
+        "model": "campaign_trail.answer",
+        "pk": 333003,
+        "fields": {
+            "question": "endorsement secular",
+            "description": "Perez. I might not see eye to eye with him on everything, but he’s going to be the one who has the business chops to get us out of this mess. The country’s going through a rough patch, and he’ll our next best choice to sort it out. If it’s not me, I want it to be him. Let’s bury the hatchet.",
         }
     },
 	{
@@ -7209,7 +7368,16 @@ campaignTrail_temp.answer_feedback_json = [
         "fields": {
             "answer": 333002,
             "candidate": 300,
-            "answer_feedback": `Sarah is a little defensive about you saying Jacobs was smart. “Jacobs isn’t smarter than me,” Sarah says, crossing her arms. “I bet you I could beat him in a debate,” Sarah says. “Sure you can,” Mark says sarcastically.`
+            "answer_feedback": `King is touched by this. King echos the same sentiment back. And across the country, you two agree to a kind of electoral coalition. You draw up a map, where you or him are leading. He withdraws where you’re on top, and you withdraw where he’s on top.`
+        }
+    },
+	{
+        "model": "campaign_trail.answer_feedback",
+        "pk": "f 333003",
+        "fields": {
+            "answer": 333003,
+            "candidate": 300,
+            "answer_feedback": `This catches Perez completely by surprise, but it is a logical choice. He sends you a thank you letter, uncharacteristically polite of him. He refrains from attacking you for the rest of the campaign. You seem to have earned his respect.`
         }
     },
 	{
@@ -9625,7 +9793,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 313004,
             "candidate": 300,
             "affected_candidate": 300,
-            "global_multiplier": 0.011,
+            "global_multiplier": -0.011,
         }
     },
 	{
@@ -10200,6 +10368,26 @@ campaignTrail_temp.answer_score_global_json = [
     },
 	{
         "model": "campaign_trail.answer_score_global",
+        "pk": "g_score 333003",
+        "fields": {
+            "answer": 333003,
+            "candidate": 300,
+            "affected_candidate": 300,
+            "global_multiplier": 0.015,
+        }
+    },
+	{
+        "model": "campaign_trail.answer_score_global",
+        "pk": "g_score 333003",
+        "fields": {
+            "answer": 333003,
+            "candidate": 300,
+            "affected_candidate": 303,
+            "global_multiplier": 0.025,
+        }
+    },
+	{
+        "model": "campaign_trail.answer_score_global",
         "pk": "g_score 334001",
         "fields": {
             "answer": 334001,
@@ -10712,7 +10900,7 @@ campaignTrail_temp.answer_score_issue_json = [
             "answer": 200001,
             "issue": issue_dict["worldly_conflict"],
             "issue_score": -0.7,
-            "issue_importance": 100
+            "issue_importance": 1
         }
     },
 	{
@@ -10722,7 +10910,7 @@ campaignTrail_temp.answer_score_issue_json = [
             "answer": 200001,
             "issue": issue_dict["partisanship"],
             "issue_score": -0.7,
-            "issue_importance": 100
+            "issue_importance": 1
         }
     },
 	{
@@ -10732,7 +10920,7 @@ campaignTrail_temp.answer_score_issue_json = [
             "answer": 200002,
             "issue": issue_dict["worldly_conflict"],
             "issue_score": 0.7,
-            "issue_importance": 100
+            "issue_importance": 1
         }
     },
 	{
@@ -10742,7 +10930,7 @@ campaignTrail_temp.answer_score_issue_json = [
             "answer": 200002,
             "issue": issue_dict["partisanship"],
             "issue_score": 0.7,
-            "issue_importance": 100
+            "issue_importance": 1
         }
     },
 	{
@@ -10752,7 +10940,7 @@ campaignTrail_temp.answer_score_issue_json = [
             "answer": 200003,
             "issue": issue_dict["worldly_conflict"],
             "issue_score": 0,
-            "issue_importance": 100
+            "issue_importance": 1
         }
     },
 	{
@@ -10762,7 +10950,7 @@ campaignTrail_temp.answer_score_issue_json = [
             "answer": 210001,
             "issue": issue_dict["religious"],
             "issue_score": -0.4,
-            "issue_importance": 100
+            "issue_importance": 1
         }
     },
 	{
@@ -10772,7 +10960,7 @@ campaignTrail_temp.answer_score_issue_json = [
             "answer": 210002,
             "issue": issue_dict["religious"],
             "issue_score": -0.7,
-            "issue_importance": 100
+            "issue_importance": 1
         }
     },
 	{
@@ -10782,7 +10970,7 @@ campaignTrail_temp.answer_score_issue_json = [
             "answer": 210003,
             "issue": issue_dict["religious"],
             "issue_score": 0.5,
-            "issue_importance": 100
+            "issue_importance": 1
         }
     },
 	{
@@ -15727,20 +15915,30 @@ function set_candidate_score(candidate,score1,score2,score3,score4,score5) {
 		let issue = campaignTrail_temp.candidate_issue_score_json[n].fields.issue;
 		if (campaignTrail_temp.candidate_issue_score_json[n].fields.candidate == candidate) {
 			if (issue == 110) {
-				campaignTrail_temp.candidate_issue_score_json[n]["fields"]["issue_score"] = score1;
-				console.log("Set 1score to be "+score1);
+				if (score1 != "null") {
+					campaignTrail_temp.candidate_issue_score_json[n]["fields"]["issue_score"] = score1;
+					console.log("Set 1score to be "+score1);
+				}
 			} else if (issue == 111) {
-				campaignTrail_temp.candidate_issue_score_json[n]["fields"]["issue_score"] = score2;
-				console.log("Set 2score to be "+score2);
+				if (score2 != "null") {
+					campaignTrail_temp.candidate_issue_score_json[n]["fields"]["issue_score"] = score2;
+					console.log("Set 2score to be "+score2);
+				}
 			} else if (issue == 112) {
-				campaignTrail_temp.candidate_issue_score_json[n]["fields"]["issue_score"] = score3;
-				console.log("Set 3score to be "+score3);
+				if (score3 != "null") {
+					campaignTrail_temp.candidate_issue_score_json[n]["fields"]["issue_score"] = score3;
+					console.log("Set 3score to be "+score3);
+				}
 			} else if (issue == 113) {
-				campaignTrail_temp.candidate_issue_score_json[n]["fields"]["issue_score"] = score4;
-				console.log("Set 4score to be "+score4);
+				if (score4 != "null") {
+					campaignTrail_temp.candidate_issue_score_json[n]["fields"]["issue_score"] = score4;
+					console.log("Set 4score to be "+score4);
+				}
 			} else if (issue == 114) {
-				campaignTrail_temp.candidate_issue_score_json[n]["fields"]["issue_score"] = score5;
-				console.log("Set 5score to be "+score5);
+				if (score5 != "null") {
+					campaignTrail_temp.candidate_issue_score_json[n]["fields"]["issue_score"] = score5;
+					console.log("Set 5score to be "+score5);
+				}
 			}			
 		}
 	}
