@@ -131,7 +131,7 @@ function silent_unlock(name) {
 	console.log(`Would unlock '${name}' but won't because cheating!`);
 	return;
 	}
-
+	achContent = ''; // This doesn't do anything, just helps avoid some errors down the road.
 	unlockedAch[name] = ach;
 	localStorage.setItem("unlockedAch", JSON.stringify(unlockedAch));
 	addAllAchievements();
