@@ -256,11 +256,11 @@ function louisianaPurchase() {
         e.candidate_json[id].fields.last_name = "Clinton"   
         e.candidate_json[id].fields.color_hex = "#8ac8ff"
         opponentIndex += 5;
-        e.candidate_issue_score_json.filter((x) => x.fields.candidate == 12354 && x.fields.issue == 27)[0].fields.issue_score = -0.6
-        e.candidate_issue_score_json.filter((x) => x.fields.candidate == 12354 && x.fields.issue == 28)[0].fields.issue_score = 0.35
-        e.candidate_issue_score_json.filter((x) => x.fields.candidate == 12354 && x.fields.issue == 29)[0].fields.issue_score = -0.35
-        e.candidate_issue_score_json.filter((x) => x.fields.candidate == 12354 && x.fields.issue == 30)[0].fields.issue_score = 0.5
-        e.candidate_issue_score_json.filter((x) => x.fields.candidate == 12354 && x.fields.issue == 31)[0].fields.issue_score = -0.6
+        e.candidate_issue_score_json.filter((x) => x.fields.candidate == 12354 && x.fields.issue == 27)[0].fields.issue_score = -0.8
+        e.candidate_issue_score_json.filter((x) => x.fields.candidate == 12354 && x.fields.issue == 28)[0].fields.issue_score = 0.6
+        e.candidate_issue_score_json.filter((x) => x.fields.candidate == 12354 && x.fields.issue == 29)[0].fields.issue_score = 0.5
+        e.candidate_issue_score_json.filter((x) => x.fields.candidate == 12354 && x.fields.issue == 30)[0].fields.issue_score = 0.52
+        e.candidate_issue_score_json.filter((x) => x.fields.candidate == 12354 && x.fields.issue == 31)[0].fields.issue_score = -0.9
     }
     function gravelLibertarian() {
         var id = e.candidate_json.map(p=>p.pk).indexOf(20001)
