@@ -208,7 +208,7 @@ christian_dict = {
 	"missouri": 0.5,
 	"kansas": 0.5,
 	"texas": 0.5,
-	"utah": 0.5,
+	"utah": 2,
 }
 
 technocapitalist_dict = {
@@ -272,7 +272,7 @@ populist_dict = {
 
 function geo_calc(num,mult) {
 	if (num >= 0) {
-		return mult*0.05*(1-Math.pow(0.8, num))/0.2;
+		return mult*0.08*(1-Math.pow(0.8, num))/0.2;
 	} else {
 		return 0-mult*0.05*(1-Math.pow(1.2, -num))/-0.2;
 	}
