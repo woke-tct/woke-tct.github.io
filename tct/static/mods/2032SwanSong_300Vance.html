@@ -574,6 +574,40 @@ function add_highlight() {
 	}
 }
 
+function set_candidate_score(candidate,score1,score2,score3,score4,score5) {
+	for (let n = 0; n<campaignTrail_temp.candidate_issue_score_json.length; n++) {
+		let issue = campaignTrail_temp.candidate_issue_score_json[n].fields.issue;
+		if (campaignTrail_temp.candidate_issue_score_json[n].fields.candidate == candidate) {
+			if (issue == "Nationalism") {
+				if (score1 != "null") {
+					campaignTrail_temp.candidate_issue_score_json[n]["fields"]["issue_score"] = score1;
+					console.log("Set 1score to be "+score1);
+				}
+			} else if (issue == "Economics") {
+				if (score2 != "null") {
+					campaignTrail_temp.candidate_issue_score_json[n]["fields"]["issue_score"] = score2;
+					console.log("Set 2score to be "+score2);
+				}
+			} else if (issue == "Moralism") {
+				if (score3 != "null") {
+					campaignTrail_temp.candidate_issue_score_json[n]["fields"]["issue_score"] = score3;
+					console.log("Set 3score to be "+score3);
+				}
+			} else if (issue == "Bureaucracy") {
+				if (score4 != "null") {
+					campaignTrail_temp.candidate_issue_score_json[n]["fields"]["issue_score"] = score4;
+					console.log("Set 4score to be "+score4);
+				}
+			} else if (issue == "Tariffs") {
+				if (score5 != "null") {
+					campaignTrail_temp.candidate_issue_score_json[n]["fields"]["issue_score"] = score5;
+					console.log("Set 5score to be "+score5);
+				}
+			}			
+		}
+	}
+}
+
 expectation = 0;
 populist = 0;
 christian = 0;
@@ -746,15 +780,19 @@ cyoAdventure = function (a) {
 	}
 	if (ans == 100001) {
 		opinion_shift = "traditionalist";
+		set_candidate_score(301,0.5,0.4,0.6,0.4,0.3);
 	}
 	if (ans == 100002) {
 		opinion_shift = "futurist";
+		set_candidate_score(301,0.5,0.5,0.5,0.4,0.3);
 	}
 	if (ans == 100003) {
 		opinion_shift = "libertarian";
+		set_candidate_score(301,0.5,0.4,0.5,0.5,0.3);
 	}
 	if (ans == 100004) {
 		opinion_shift = "nationalist";
+		set_candidate_score(301,0.6,0.4,0.5,0.4,0.3);
 	}
 	if (ans == 110001) {
 		darwinist -= 1;
