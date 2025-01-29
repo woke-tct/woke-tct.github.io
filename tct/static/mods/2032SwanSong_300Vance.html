@@ -272,9 +272,9 @@ populist_dict = {
 
 function geo_calc(num,mult) {
 	if (num >= 0) {
-		return mult*0.06*(1-Math.pow(0.8, num))/0.2;
+		return mult*0.05*(1-Math.pow(0.8, num))/0.2;
 	} else {
-		return 0-mult*0.06*(1-Math.pow(1.2, -num))/-0.2;
+		return 0-mult*0.05*(1-Math.pow(1.2, -num))/-0.2;
 	}
 }
 
@@ -605,7 +605,7 @@ cyoAdventure = function (a) {
 	} else if (difficulty == "medium") {
 		adjust_support(0.0005)
 	} else if (difficulty == "hard") {
-		adjust_support(-0.0005)
+		adjust_support(0)
 	}
 	
 	if (opinion_shift == "traditionalist") {
