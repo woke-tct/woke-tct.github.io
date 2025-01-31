@@ -42,6 +42,35 @@ back0 = function() {
     text = "<p>To say the last three years have been chaotic would be an understatement. With the world in an abyss of uncertainty over whether to remain somewhat united or splinter off into factions, the United States finds itself at a crossroads One that will shake the world to its core. The New Deal Coalition now torn asunder, all that's left is an all-out war between President Wallace and Governor Thurmond for the fate of what was once the party of those such as Jackson and Wilson.</p><p> The Republicans, who are not exempt from this factionalism, find themselves trying to mend fences in an attempt to capture the White House after four devastating defeats during a rising tide of conservatism and isolationism not unlike three decades before. After a rough primary, Robert Taft looks to bring traditional Republican values right back into the limelight.</p><button onclick='next0()'>More</button>"
     document.getElementById("election_summary").innerHTML = text
 }
+bannerArr=0
+
+bannerlist=["https://files.catbox.moe/ui3aqq.png", "https://files.catbox.moe/z2oo21.png", "https://files.catbox.moe/vn1pnk.jpg"]
+document.getElementById("header").src = bannerlist[Math.floor((Math.random() * bannerlist.length))]
+RecReading=true
+
+var changeBanner = () =>
+
+{
+
+bannerArr+=1
+
+document.getElementById("header").src=bannerlist[bannerArr % bannerlist.length]
+
+}
+
+document.getElementById("header").src=bannerlist[0]
+
+footer = $(".footer")[0]
+
+var button = document.createElement("button") // <button onclick="changeBanner()" style="font-weight: bold; height:19.49px; position: static; right: 770px; top: 0px;">Change banner</button>
+
+button.style = font-weight: bold; height:19.49px; position: static; right: 770px; top: 0px;
+
+button.innerHTML = "Change banner"
+
+footer.insertBefore(button, footer.firstChild);
+
+button.onclick = changeBanner;
 $("#music_player")[0].children[0].style.display="none"
 $("#music_player")[0].children[1].style.display="none"
 
