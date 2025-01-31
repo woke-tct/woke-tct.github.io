@@ -43,33 +43,20 @@ back0 = function() {
     document.getElementById("election_summary").innerHTML = text
 }
 bannerArr=0
-
 bannerlist=["https://files.catbox.moe/ui3aqq.png", "https://files.catbox.moe/z2oo21.png", "https://files.catbox.moe/vn1pnk.jpg"]
-document.getElementById("header").src = bannerlist[Math.floor((Math.random() * bannerlist.length))]
-RecReading=true
-
 var changeBanner = () =>
-
 {
-
 bannerArr+=1
-
 document.getElementById("header").src=bannerlist[bannerArr % bannerlist.length]
-
 }
-
 document.getElementById("header").src=bannerlist[0]
 
+document.getElementById("header").src = "https://files.catbox.moe/ui3aqq.png"
 footer = $(".footer")[0]
-
 var button = document.createElement("button") // <button onclick="changeBanner()" style="font-weight: bold; height:19.49px; position: static; right: 770px; top: 0px;">Change banner</button>
-
-button.style = "font-weight: bold; height:19.49px; position: static; right: 770px; top: 0px;"
-
+button.style = `font-weight: bold; height:19.49px; position: static; right: 770px; top: 0px;`
 button.innerHTML = "Change banner"
-
 footer.insertBefore(button, footer.firstChild);
-
 button.onclick = changeBanner;
 $("#music_player")[0].children[0].style.display="none"
 $("#music_player")[0].children[1].style.display="none"
@@ -452,21 +439,4 @@ var soundtracks = {
 newMusicPlayer()
 
 
-
-bannerArr=0
-bannerlist=["https://files.catbox.moe/ui3aqq.png", "https://files.catbox.moe/z2oo21.png", "https://files.catbox.moe/vn1pnk.jpg"]
-var changeBanner = () =>
-{
-bannerArr+=1
-document.getElementById("header").src=bannerlist[bannerArr % bannerlist.length]
-}
-document.getElementById("header").src=bannerlist[0]
-
-document.getElementById("header").src = "https://files.catbox.moe/ui3aqq.png"
-footer = $(".footer")[0]
-var button = document.createElement("button") // <button onclick="changeBanner()" style="font-weight: bold; height:19.49px; position: static; right: 770px; top: 0px;">Change banner</button>
-button.style = `font-weight: bold; height:19.49px; position: static; right: 770px; top: 0px;`
-button.innerHTML = "Change banner"
-footer.insertBefore(button, footer.firstChild);
-button.onclick = changeBanner;
 
