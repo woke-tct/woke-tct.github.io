@@ -183,7 +183,6 @@ nct_stuff.themes = {
     coloring_container: "#BC6B71",
     coloring_title: "#310F12",
     game_window: "A53545",
-    background_size: contain;
   },
 };
 
@@ -303,7 +302,7 @@ function updateDynamicStyle() {
   }
   let background_size_css = "";
   if (selectedTheme.background_cover) {
-    background_size_css = "background-size: cover";
+    background_size_css = "background-size: contain";
   }
   let dynaStyle = `
     #header {
