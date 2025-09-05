@@ -176,34 +176,14 @@ nct_stuff.dynamicOverride = false;
 nct_stuff.ignoreCorr = false;
 nct_stuff.themes = {
   tct: {
-    name: "OpenTCT",
-    background: "../static/images/backgrounds/tct_background.jpg",
+    name: "Woke TCT",
+    background: "../static/images/backgrounds/tct_background.png",
     banner: "../static/images/banners/tct_banner.png",
-    coloring_window: "#647a7a",
-    coloring_container: "#cef0ed",
-    coloring_title: "#43948e",
+    coloring_window: "#9B8585",
+    coloring_container: "#BC6B71",
+    coloring_title: "#310F12",
     game_window: "A53545",
-  },
-  modjam: {
-    name: "Modding Jam",
-    background: "../static/images/backgrounds/tct_background.jpg",
-    banner: "../static/images/banners/jam_ntsc.png",
-    coloring_window: "#647a7a",
-    coloring_container: "#cef0ed",
-    coloring_title: "#43948e",
-    game_window: "A53545",
-  },
-  classic: {
-    name: "Classic",
-    background: "",
-    banner: "../static/images/banners/banner_classic.png",
-    coloring_window: "#E8FBFF",
-    coloring_container: "",
-    coloring_title: "",
-    // Commenting out for now until we can do this without breaking mod themes
-    //inner_window_2: "#E8FBFF",
-    //inner_window_3: "#E8FBFF",
-    //inner_window_4: "#E8FBFF"
+    background_size: contain;
   },
 };
 
