@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="../static/amusa_main_2016032801.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="../static/css/community.css" type="text/css" media="screen" />
     <link rel="icon" type="image/x-icon" href="../static/opentctfavico.gif">
-    <link rel="shortcut icon" href="/static/34starcircle-2.png" type="image/png" />
+    <link rel="shortcut icon" href="https://static01.nyt.com/images/2014/10/15/world/europe/15bosnia-cnd-Milorad-Dodik/15bosnia-cnd-Milorad-Dodik-square320.jpg" type="image/jpg" />
     <link rel="canonical" href="index.html" />
     <meta name="description" content="Can you win a Presidential election? Step into the shoes of a battery of candidates across real and alternate timelines and find out." />
     <meta property="og:title" content="Woke TCT" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="../static/34starcircle-2.png" />
+    <meta property="og:image" content="https://static01.nyt.com/images/2014/10/15/world/europe/15bosnia-cnd-Milorad-Dodik/15bosnia-cnd-Milorad-Dodik-square320.jpg" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="200" />
     <meta property="og:image:height" content="200" />
@@ -169,42 +169,11 @@
             <br>
             <hr>
             <div id="featured-mods-area">
-              <div style="margin:10px; display:flex; justify-items: center; justify-content: center;">
-                <button class="mode-button pressed" onclick="setMode(event, 'all')" style="text-align: center;">All Mods</button>
-                <button class="mode-button" onclick="setMode(event, 'new')" style="text-align: center;">New Releases</button>
-              </div>
-              <div class="tab">
-                <button class="tablinks active" onclick="setCategory(event, 'all')">All</button>
-                <button class="tablinks" onclick="setCategory(event, 'favorites')">Favs</button>
-                <button class="tablinks" onclick="setCategory(event, new RegExp('[0-1][0-6][0-9][0-9]|BCE'))">Pre 1700s</button>
-                <button class="tablinks" onclick="setCategory(event, new RegExp('1[7-8][0-9][0-9]'))">1700s-1800s</button>
-                <button class="tablinks" onclick="setCategory(event, new RegExp('19[0-3][0-9]'))">1900s-1930s</button>
-                <button class="tablinks" onclick="setCategory(event, new RegExp('19[4-5][0-9]'))">1940s-1950s</button>
-                <button class="tablinks" onclick="setCategory(event, new RegExp('19[6-7][0-9]'))">1960s-1970s</button>
-                <button class="tablinks" onclick="setCategory(event, new RegExp('19[8-9][0-9]'))">1980s-1990s</button>
-                <button class="tablinks" onclick="setCategory(event, new RegExp('[2-9][0-9][0-9][0-9][^(BCE)]|2008'))">2000s and Beyond</button>
-              </div>
-              <div id="tags" class="tags-grid"></div>
-              <div style="color:white;margin:auto; display:flex;align-items: center;justify-content: center; margin-bottom:10px; gap:10px;">
-                <input placeholder="Filter by mod name" oninput="filterMods(event)" type="text" id="modSearch" name="modSearch"></input>
-                
-                <div>
-                <label for="sorting">Sort by:</label>
-                <select onchange="onChangeModSorter(event)" name="sorting" id="modSorting">
-                  <option value="chrono">Year</option>
-                  <!-- I am leaving this commented out in case you need it for later to add more sorting options -->
-                  <!--<option value="mostFav">Popularity</option>
-                  <option value="leastFav">Nicheness</option>
-                  <option value="mostPlays">Plays</option>-->
-                </select>
-              </div>
-              </div>
               <div id="mod-grid" class="community-grid"></div>
             </div>
             </div>
             <br>
             <div id="site_credits" style="text-align: center;">
-              <a href="https://discord.gg/qt6pQshJtA" style="background-color:#1e3a36; color:#70a79d">Join us on Discord!</a><br>
               <a href="http://www.americanhistoryusa.com" style="color:#FF6B6B">Original site created by Dan Bryan &copy; 2012- <testf id="year">2022</testf></a><br><br>
               <div>
                 <div style="margin-top:10px; display:inline-block;">
@@ -212,9 +181,6 @@
                   <button onclick="activateCheatMenu()" style="border-radius:5px; font-weight:bold;padding:10px;">Cheat Menu</button>
                   <button id="customThemesButton" onclick="toggleModBoxThemes()" style="border-radius:5px; font-weight:bold;padding:10px;">Loading</button>
                   <button id="mobileModeButton" onclick="toggleMobileMode()" style="border-radius:5px; font-weight:bold;padding:10px;">Loading</button>
-                  <br><br>
-                  <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="opentct" data-color="#1cc4a3" data-emoji="🗳️"  data-font="Arial" data-text="Donate to keep us running!" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#FFDD00" ></script>
-                 <p style="color:#FF6B6B">If you want to donate to a specific mod creator, add their mod's name to the donation and it'll be sent to them, no questions asked!</p>
                 </div>
               </div>
             </div>
